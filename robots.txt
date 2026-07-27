@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://primerealestates.in/sitemap.xml
+Sitemap: https://theprimerealestates.com/sitemap.xml
