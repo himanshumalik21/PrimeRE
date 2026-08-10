@@ -2,82 +2,378 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Cloud Property Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Property Manager | Supabase Connected</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Include Supabase JS SDK -->
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
-<body class="bg-slate-50 p-8" x-data="propertyApp()">
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen" x-data="propertyApp()">
 
-    <div class="max-w-4xl mx-auto bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-        <h1 class="text-xl font-bold mb-4">Cloud Property Database Dashboard</h1>
-
-        <!-- Add Form -->
-        <form @submit.prevent="addProperty" class="grid grid-cols-2 gap-4 mb-6 pb-6 border-b">
-            <input type="text" x-model="form.property_id" placeholder="Property ID (e.g. PR-01)" class="border p-2 rounded-lg text-sm" required>
-            <input type="text" x-model="form.name" placeholder="Property Name" class="border p-2 rounded-lg text-sm" required>
-            <input type="text" x-model="form.address" placeholder="Address" class="border p-2 rounded-lg text-sm col-span-2" required>
-            <textarea x-model="form.report_notes" placeholder="Inspection / Maintenance Report..." class="border p-2 rounded-lg text-sm col-span-2"></textarea>
-            <button type="submit" class="bg-blue-600 text-white py-2 rounded-lg text-sm font-semibold col-span-2">Save Property & Report</button>
-        </form>
-
-        <!-- Property List Display -->
-        <div class="space-y-4">
-            <template x-for="prop in properties" :key="prop.id">
-                <div class="border p-4 rounded-xl flex justify-between items-start bg-slate-50">
-                    <div>
-                        <span class="bg-slate-900 text-white text-xs px-2 py-0.5 rounded font-mono" x-text="prop.property_id"></span>
-                        <h3 class="font-bold text-slate-800 mt-1" x-text="prop.name"></h3>
-                        <p class="text-xs text-slate-500" x-text="prop.address"></p>
-                        <p class="text-xs text-blue-600 mt-2 bg-blue-50 p-2 rounded border border-blue-100">
-                            <strong>Report:</strong> <span x-text="prop.report_notes || 'No reports logged.'"></span>
-                        </p>
-                    </div>
-                    <button @click="deleteProperty(prop.id)" class="text-red-500 hover:text-red-700 text-xs font-semibold">Delete</button>
+    <!-- ================= 1. PASSWORD LOCK SCREEN ================= -->
+    <div x-cloak x-show="!authenticated" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 border border-slate-100">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/30 text-2xl">
+                    <i class="fa-solid fa-building-shield"></i>
                 </div>
-            </template>
+                <h1 class="text-2xl font-bold text-slate-900">Cloud Property Manager</h1>
+                <p class="text-sm text-slate-500 mt-1">Enter your master password to access database</p>
+            </div>
+            
+            <form @submit.prevent="authenticate">
+                <div class="mb-4">
+                    <input type="password" x-model="passwordInput" placeholder="Enter master password..." 
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm">
+                    <p x-show="authError" class="text-red-500 text-xs mt-2 font-medium" x-text="authError"></p>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition duration-200 shadow-md shadow-blue-600/20 text-sm">
+                    Unlock Dashboard
+                </button>
+            </form>
+            <p class="text-center text-xs text-slate-400 mt-6">Default Master Password: <span class="font-mono bg-slate-100 px-1 py-0.5 rounded text-slate-600">admin123</span></p>
         </div>
     </div>
 
+    <!-- ================= 2. MAIN APP DASHBOARD ================= -->
+    <div x-cloak x-show="authenticated" class="flex flex-col min-h-screen">
+        
+        <!-- Header Navigation -->
+        <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-md shadow-blue-500/20">
+                        <i class="fa-solid fa-cloud"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-base text-slate-900 tracking-tight block leading-none">Cloud<span class="text-blue-600">Manager</span></span>
+                        <span class="text-[10px] text-emerald-600 font-semibold uppercase tracking-wider flex items-center gap-1 mt-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Supabase Connected
+                        </span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button @click="openModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center space-x-2 shadow-sm">
+                        <i class="fa-solid fa-plus text-xs"></i>
+                        <span>Add Property</span>
+                    </button>
+                    <button @click="lockApp()" class="text-slate-400 hover:text-slate-600 p-2 rounded-lg transition" title="Lock App">
+                        <i class="fa-solid fa-lock text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            
+            <!-- Filter & Search Bar -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Portfolio & Reports</h2>
+                    <p class="text-sm text-slate-500">Live PostgreSQL cloud database records & inspection notes.</p>
+                </div>
+                <div class="w-full sm:w-72 relative">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                        <i class="fa-solid fa-search text-xs"></i>
+                    </span>
+                    <input type="text" x-model="searchQuery" placeholder="Search ID, address, reports..." 
+                        class="w-full pl-9 pr-4 py-2 bg-white rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div x-show="loading" class="text-center py-20">
+                <i class="fa-solid fa-circle-notch fa-spin text-3xl text-blue-600 mb-3"></i>
+                <p class="text-sm text-slate-500">Syncing database records...</p>
+            </div>
+
+            <!-- Empty State -->
+            <template x-if="!loading && filteredProperties.length === 0">
+                <div class="bg-white rounded-2xl border border-dashed border-slate-300 p-12 text-center">
+                    <div class="w-16 h-16 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-slate-900">No properties found</h3>
+                    <p class="text-sm text-slate-500 mt-1">Get started by creating your first property asset entry in the cloud.</p>
+                    <button @click="openModal()" class="mt-4 inline-flex items-center space-x-2 bg-slate-900 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-slate-800 transition">
+                        <i class="fa-solid fa-plus text-xs"></i>
+                        <span>Add Property</span>
+                    </button>
+                </div>
+            </template>
+
+            <!-- Property Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-show="!loading">
+                <template x-for="property in filteredProperties" :key="property.id">
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition duration-200 flex flex-col overflow-hidden">
+                        
+                        <!-- Card Top Bar -->
+                        <div class="h-32 bg-slate-100 relative p-4 flex flex-col justify-between bg-cover bg-center" 
+                             :style="property.image ? `background-image: url('${property.image}')` : 'background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);'">
+                            <div class="flex justify-between items-center z-10">
+                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-xs font-mono font-semibold px-2.5 py-1 rounded-lg shadow-sm" x-text="property.property_id"></span>
+                                <span class="bg-white/90 backdrop-blur-md text-slate-800 text-xs font-medium px-2.5 py-1 rounded-lg shadow-sm" x-text="property.type || 'Residential'"></span>
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5 flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-lg mb-1" x-text="property.name"></h3>
+                                <p class="text-slate-500 text-xs flex items-start space-x-1.5 mt-1">
+                                    <i class="fa-solid fa-location-dot text-blue-600 mt-0.5 shrink-0"></i>
+                                    <span x-text="property.address"></span>
+                                </p>
+
+                                <!-- Reports / Notes Box -->
+                                <div class="mt-4 p-3 bg-blue-50/60 rounded-xl border border-blue-100 text-xs">
+                                    <div class="font-semibold text-blue-900 mb-1 flex items-center justify-between">
+                                        <span><i class="fa-solid fa-clipboard-list mr-1"></i> Reports & Notes</span>
+                                    </div>
+                                    <p class="text-slate-600 line-clamp-3 italic" x-text="property.report_notes || 'No reports logged yet.'"></p>
+                                </div>
+                            </div>
+
+                            <!-- Specs info -->
+                            <div class="grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-slate-100 text-xs text-slate-600">
+                                <div><span class="font-semibold text-slate-900">Valuation:</span> $<span x-text="property.valuation ? Number(property.valuation).toLocaleString() : '0'"></span></div>
+                                <div><span class="font-semibold text-slate-900">Status:</span> <span x-text="property.status || 'Vacant'"></span></div>
+                            </div>
+
+                            <!-- Card Actions -->
+                            <div class="flex items-center justify-end space-x-2 mt-5 pt-3 border-t border-slate-100">
+                                <button @click="editProperty(property)" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-medium transition">
+                                    <i class="fa-solid fa-pen-to-square mr-1"></i> Edit
+                                </button>
+                                <button @click="deleteProperty(property.id)" class="px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg text-xs font-medium transition">
+                                    <i class="fa-solid fa-trash mr-1"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+
+        </main>
+
+        <!-- ================= 3. ADD/EDIT PROPERTY MODAL ================= -->
+        <div x-cloak x-show="isModalOpen" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
+            <div @click.outside="closeModal()" class="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6 border border-slate-100 my-8">
+                <div class="flex justify-between items-center mb-5 pb-3 border-b border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900" x-text="isEditing ? 'Edit Property & Report' : 'Add New Property Record'"></h3>
+                    <button @click="closeModal()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+                </div>
+
+                <form @submit.prevent="saveProperty" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Property ID</label>
+                            <input type="text" x-model="form.property_id" required placeholder="e.g. PROP-101" 
+                                class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Property Name</label>
+                            <input type="text" x-model="form.name" required placeholder="e.g. Sunset Heights" 
+                                class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Full Street Address</label>
+                        <input type="text" x-model="form.address" required placeholder="e.g. 742 Evergreen Terrace" 
+                            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Type</label>
+                            <select x-model="form.type" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                                <option value="Residential">Residential</option>
+                                <option value="Commercial">Commercial</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Land / Plot">Land / Plot</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Status</label>
+                            <select x-model="form.status" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                                <option value="Occupied">Occupied</option>
+                                <option value="Vacant">Vacant</option>
+                                <option value="Under Maintenance">Under Maintenance</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Valuation ($)</label>
+                            <input type="number" x-model="form.valuation" placeholder="e.g. 250000" 
+                                class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Image URL (Optional)</label>
+                            <input type="url" x-model="form.image" placeholder="https://images.unsplash.com/..." 
+                                class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 uppercase mb-1">Inspection & Activity Reports</label>
+                        <textarea x-model="form.report_notes" rows="3" placeholder="Enter periodic maintenance notes, tenant feedback, inspection reports..." 
+                            class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                    </div>
+
+                    <div class="flex justify-end space-x-3 pt-4 border-t border-slate-100">
+                        <button type="button" @click="closeModal()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-sm font-semibold transition">Cancel</button>
+                        <button type="submit" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-sm font-semibold transition shadow-sm" x-text="isEditing ? 'Update Record' : 'Save to Cloud'"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= 4. APP LOGIC (Supabase + Alpine.js) ================= -->
     <script>
-        // Initialize Supabase Client with your credentials
         const SUPABASE_URL = 'https://gykkkehuhkoudiiyqagu.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5a2trZWh1aGtvdWRpaXlxYWd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMzg1ODMsImV4cCI6MjEwMTkxNDU4M30.BMu-dJ0yARYFNahAjvN6D_yW2qXg_WfQc0db3RCmRiI';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5a2trZWh1aGtvdWRpaXlxYWd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMzg1ODMsImV4cCI6MjEwMTkxNDU4M30.BMu-dJ0yARYFNahAjvN6D_yW2qXg_WfQc0db3RCmRiI'.trim();
+        
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         function propertyApp() {
             return {
+                authenticated: false,
+                passwordInput: '',
+                authError: '',
+                masterPassword: 'admin123',
+                
+                loading: true,
+                searchQuery: '',
+                isModalOpen: false,
+                isEditing: false,
+                
+                form: {
+                    id: null,
+                    property_id: '',
+                    name: '',
+                    address: '',
+                    type: 'Residential',
+                    status: 'Occupied',
+                    valuation: '',
+                    image: '',
+                    report_notes: ''
+                },
+
                 properties: [],
-                form: { property_id: '', name: '', address: '', report_notes: '' },
 
                 async init() {
                     await this.fetchProperties();
                 },
 
-                async fetchProperties() {
-                    let { data, error } = await _supabase.from('properties').select('*').order('id', { ascending: false });
-                    if (!error) this.properties = data;
-                },
-
-                async addProperty() {
-                    let { error } = await _supabase.from('properties').insert([this.form]);
-                    if (!error) {
-                        this.form = { property_id: '', name: '', address: '', report_notes: '' };
-                        this.fetchProperties();
+                authenticate() {
+                    if (this.passwordInput === this.masterPassword) {
+                        this.authenticated = true;
+                        this.authError = '';
+                        this.passwordInput = '';
                     } else {
-                        alert('Error adding property: ' + error.message);
+                        this.authError = 'Incorrect master password. Default is admin123';
                     }
                 },
 
+                lockApp() {
+                    this.authenticated = false;
+                },
+
+                async fetchProperties() {
+                    this.loading = true;
+                    let { data, error } = await _supabase.from('properties').select('*').order('id', { ascending: false });
+                    if (error) {
+                        console.error('Error fetching data:', error.message);
+                    } else {
+                        this.properties = data || [];
+                    }
+                    this.loading = false;
+                },
+
+                get filteredProperties() {
+                    if (!this.searchQuery) return this.properties;
+                    const q = this.searchQuery.toLowerCase();
+                    return this.properties.filter(p => 
+                        (p.property_id && p.property_id.toLowerCase().includes(q)) || 
+                        (p.address && p.address.toLowerCase().includes(q)) || 
+                        (p.name && p.name.toLowerCase().includes(q)) ||
+                        (p.report_notes && p.report_notes.toLowerCase().includes(q))
+                    );
+                },
+
+                openModal() {
+                    this.isEditing = false;
+                    this.form = { id: null, property_id: '', name: '', address: '', type: 'Residential', status: 'Occupied', valuation: '', image: '', report_notes: '' };
+                    this.isModalOpen = true;
+                },
+
+                editProperty(property) {
+                    this.isEditing = true;
+                    this.form = { ...property };
+                    this.isModalOpen = true;
+                },
+
+                closeModal() {
+                    this.isModalOpen = false;
+                },
+
+                async saveProperty() {
+                    const payload = {
+                        property_id: this.form.property_id,
+                        name: this.form.name,
+                        address: this.form.address,
+                        type: this.form.type,
+                        status: this.form.status,
+                        valuation: this.form.valuation ? parseFloat(this.form.valuation) : null,
+                        image: this.form.image,
+                        report_notes: this.form.report_notes
+                    };
+
+                    if (this.isEditing) {
+                        let { error } = await _supabase.from('properties').update(payload).eq('id', this.form.id);
+                        if (error) {
+                            alert('Update failed: ' + error.message);
+                            return;
+                        }
+                    } else {
+                        let { error } = await _supabase.from('properties').insert([payload]);
+                        if (error) {
+                            alert('Insert failed: ' + error.message);
+                            return;
+                        }
+                    }
+                    
+                    await this.fetchProperties();
+                    this.closeModal();
+                },
+
                 async deleteProperty(id) {
-                    if (confirm('Are you sure you want to delete this record?')) {
+                    if (confirm('Are you sure you want to delete this property record from the cloud database?')) {
                         let { error } = await _supabase.from('properties').delete().eq('id', id);
-                        if (!error) this.fetchProperties();
+                        if (error) {
+                            alert('Delete failed: ' + error.message);
+                        } else {
+                            await this.fetchProperties();
+                        }
                     }
                 }
             }
         }
     </script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 </html>
