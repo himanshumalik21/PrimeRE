@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malik Family Office | Property Management System</title>
+    <title>PMS</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome -->
@@ -51,7 +51,7 @@
                         <i class="fa-solid fa-building text-sm"></i>
                     </div>
                     <div>
-                        <span class="font-bold text-sm text-slate-900 tracking-tight block">Malik Family Office</span>
+                        <span class="font-bold text-sm text-slate-900 tracking-tight block">MFO</span>
                         <span class="text-[11px] text-slate-400 font-medium tracking-wide">Property Management System</span>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                 <div>
                     <h2 class="text-xl font-bold text-slate-900 tracking-tight">Active Portfolio</h2>
-                    <p class="text-xs text-slate-500 mt-0.5">Real-time cloud property records, metrics, and site reports.</p>
+                    <p class="text-xs text-slate-500 mt-0.5">Real-time cloud property records, files, and site reports.</p>
                 </div>
                 <div class="w-full sm:w-72 relative">
                     <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
@@ -116,10 +116,12 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent"></div>
                             
                             <!-- Top Tags -->
-                            <div class="absolute top-3.5 left-3.5 right-3.5 flex justify-between items-center z-10">
+                            <div class="absolute top-3.5 left-3.5 right-3.5 flex justify-between items-center z-10 flex-wrap gap-1">
                                 <span class="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg shadow-sm" x-text="property.property_id"></span>
-                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.category || 'Residential'"></span>
-                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.municipality || 'Gurugram'"></span>
+                                <div class="flex items-center gap-1">
+                                    <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.category || 'Residential'"></span>
+                                    <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.municipality || 'Gurugram'"></span>
+                                </div>
                             </div>
 
                             <!-- Bottom Title Overlay Inside Image Header -->
@@ -150,12 +152,25 @@
                                 </div>
                             </div>
 
-                            <!-- Notes / Reports Box -->
+                            <!-- Notes Box -->
                             <div class="text-xs">
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1 flex items-center justify-between">
-                                    <span><i class="fa-solid fa-clipboard-list mr-1 text-[9px]"></i> Notes </span>
+                                <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1">
+                                    <span><i class="fa-solid fa-clipboard-list mr-1 text-[9px]"></i> Notes</span>
                                 </div>
                                 <p class="text-slate-600 bg-slate-50/50 p-2.5 rounded-xl border border-slate-100 leading-relaxed italic line-clamp-2" x-text="property.notes || 'No activity notes logged.'"></p>
+                            </div>
+
+                            <!-- Documents Counter Badge / Preview with Custom Names -->
+                            <div class="text-xs" x-show="property.documents && property.documents.length > 0">
+                                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1 block"><i class="fa-solid fa-file-pdf text-red-500 mr-1"></i> Attached Documents (<span x-text="property.documents.length"></span>)</span>
+                                <div class="flex flex-wrap gap-1.5 mt-1">
+                                    <template x-for="doc in property.documents" :key="doc.id">
+                                        <a :href="doc.file_url" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] px-2.5 py-1 rounded-lg flex items-center space-x-1.5 border border-slate-200 shadow-sm" :title="doc.file_name">
+                                            <i class="fa-solid fa-file-pdf text-red-500"></i>
+                                            <span class="font-semibold truncate max-w-[150px]" x-text="doc.custom_name || doc.file_name"></span>
+                                        </a>
+                                    </template>
+                                </div>
                             </div>
 
                             <!-- Action Buttons -->
@@ -184,7 +199,7 @@
                 <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-100">
                     <div>
                         <h3 class="text-base font-bold text-slate-900 tracking-tight" x-text="isEditing ? 'Edit Property Record' : 'Register New Property'"></h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Configure asset details, valuation, and inspection logs.</p>
+                        <p class="text-xs text-slate-400 mt-0.5">Configure asset details, images, and upload multiple PDF files with custom titles.</p>
                     </div>
                     <button @click="closeModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-600 transition"><i class="fa-solid fa-xmark text-sm"></i></button>
                 </div>
@@ -209,10 +224,10 @@
                             class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-3 gap-3">
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Asset Type</label>
-                            <select x-model="form.type" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Category</label>
+                            <select x-model="form.category" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                                 <option value="Residential">Residential</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="Industrial">Industrial</option>
@@ -220,8 +235,13 @@
                             </select>
                         </div>
                         <div>
+                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Municipality</label>
+                            <input type="text" x-model="form.municipality" placeholder="e.g. Gurugram" 
+                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                        </div>
+                        <div>
                             <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Status</label>
-                            <select x-model="form.status" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            <select x-model="form.status" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                                 <option value="Occupied">Occupied</option>
                                 <option value="Vacant">Vacant</option>
                                 <option value="Under Maintenance">Under Maintenance</option>
@@ -231,26 +251,68 @@
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Valuation ($)</label>
-                            <input type="number" x-model="form.valuation" placeholder="e.g. 350000" 
+                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Area</label>
+                            <input type="text" x-model="form.area" placeholder="e.g. 2500 sq.ft" 
                                 class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Image URL (Optional)</label>
-                            <input type="url" x-model="form.image" placeholder="https://images.unsplash.com/..." 
-                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Property Image File</label>
+                            <input type="file" id="imageFile" accept="image/*" 
+                                class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-[11px] text-slate-500 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:text-[11px] file:font-semibold file:bg-slate-900 file:text-white hover:file:bg-slate-800 transition">
+                        </div>
+                    </div>
+
+                    <!-- Multi-PDF File Upload Section with Custom Naming -->
+                    <div>
+                        <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Upload PDFs & Assign Custom Names</label>
+                        <input type="file" id="pdfFiles" accept="application/pdf" multiple @change="handleFileSelection"
+                            class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-[11px] text-slate-500 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:text-[11px] file:font-semibold file:bg-red-600 file:text-white hover:file:bg-red-700 transition">
+                    </div>
+
+                    <!-- Dynamic List of Selected Files with Custom Name Inputs -->
+                    <template x-if="selectedNewFiles.length > 0">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
+                            <span class="block font-semibold text-slate-600 uppercase tracking-wider">Configure Display Names:</span>
+                            <template x-for="(item, index) in selectedNewFiles" :key="index">
+                                <div class="bg-white p-2.5 rounded-lg border border-slate-200 flex flex-col gap-1.5">
+                                    <span class="text-[10px] text-slate-400 truncate font-mono">File: <span x-text="item.file.name"></span></span>
+                                    <input type="text" x-model="item.customName" placeholder="Enter display name (e.g. Sale Deed, Floor Plan)..." required
+                                        class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 text-xs">
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Existing Files List when Editing -->
+                    <div x-show="isEditing && form.documents && form.documents.length > 0" class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                        <span class="block font-semibold text-slate-600 uppercase tracking-wider mb-2">Existing Attached PDFs:</span>
+                        <div class="space-y-1.5 max-h-32 overflow-y-auto">
+                            <template x-for="doc in form.documents" :key="doc.id">
+                                <div class="flex items-center justify-between bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+                                    <a :href="doc.file_url" target="_blank" class="text-blue-600 hover:underline truncate flex items-center space-x-1.5">
+                                        <i class="fa-solid fa-file-pdf text-red-500"></i>
+                                        <span class="font-semibold truncate" x-text="doc.custom_name || doc.file_name"></span>
+                                    </a>
+                                    <button type="button" @click="deleteDocument(doc.id)" class="text-red-500 hover:text-red-700 p-1">
+                                        <i class="fa-solid fa-trash text-xs"></i>
+                                    </button>
+                                </div>
+                            </template>
                         </div>
                     </div>
 
                     <div>
-                        <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Inspection & Activity Reports</label>
-                        <textarea x-model="form.report_notes" rows="3" placeholder="Enter periodic maintenance notes, tenant feedback, inspection reports..." 
+                        <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Notes & Reports</label>
+                        <textarea x-model="form.notes" rows="3" placeholder="Enter periodic maintenance notes, tenant feedback, inspection reports..." 
                             class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition"></textarea>
                     </div>
 
                     <div class="flex justify-end space-x-3 pt-5 border-t border-slate-100">
                         <button type="button" @click="closeModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-medium transition">Cancel</button>
-                        <button type="submit" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition shadow-md shadow-slate-900/10" x-text="isEditing ? 'Save Changes' : 'Save Property'"></button>
+                        <button type="submit" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition shadow-md shadow-slate-900/10 flex items-center space-x-2" :disabled="uploading">
+                            <span x-show="uploading"><i class="fa-solid fa-circle-notch fa-spin mr-1"></i> Saving & Uploading...</span>
+                            <span x-show="!uploading" x-text="isEditing ? 'Save Changes' : 'Save Property'"></span>
+                        </button>
                     </div>
                 </form>
             </div>
@@ -258,7 +320,15 @@
 
     </div>
 
-    <!-- ================= 4. APP LOGIC ================= -->
+    <!-- ================= 4. DATABASE SQL UPDATE NOTE ================= -->
+    <!-- 
+      If you haven't already added the `custom_name` column to your Supabase table, 
+      run this quick SQL command in your Supabase SQL Editor:
+      
+      alter table public.property_documents add column if not exists custom_name text;
+    -->
+
+    <!-- ================= 5. APP LOGIC ================= -->
     <script>
         const SUPABASE_URL = 'https://gykkkehuhkoudiiyqagu.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5a2trZWh1aGtvdWRpaXlxYWd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMzg1ODMsImV4cCI6MjEwMTkxNDU4M30.BMu-dJ0yARYFNahAjvN6D_yW2qXg_WfQc0db3RCmRiI'.trim();
@@ -273,6 +343,7 @@
                 masterPassword: '#Himanshu21',
                 
                 loading: true,
+                uploading: false,
                 searchQuery: '',
                 isModalOpen: false,
                 isEditing: false,
@@ -282,13 +353,16 @@
                     property_id: '',
                     name: '',
                     address: '',
-                    type: 'Residential',
+                    category: 'Residential',
+                    municipality: 'Gurugram',
                     status: 'Occupied',
-                    valuation: '',
+                    area: '',
                     image: '',
-                    report_notes: ''
+                    notes: '',
+                    documents: []
                 },
 
+                selectedNewFiles: [],
                 properties: [],
 
                 async init() {
@@ -311,7 +385,11 @@
 
                 async fetchProperties() {
                     this.loading = true;
-                    let { data, error } = await _supabase.from('properties').select('*').order('id', { ascending: false });
+                    let { data, error } = await _supabase
+                        .from('properties')
+                        .select('*, documents:property_documents(*)')
+                        .order('id', { ascending: false });
+
                     if (error) {
                         console.error('Error fetching data:', error.message);
                     } else {
@@ -327,19 +405,43 @@
                         (p.property_id && p.property_id.toLowerCase().includes(q)) || 
                         (p.address && p.address.toLowerCase().includes(q)) || 
                         (p.name && p.name.toLowerCase().includes(q)) ||
-                        (p.report_notes && p.report_notes.toLowerCase().includes(q))
+                        (p.notes && p.notes.toLowerCase().includes(q)) ||
+                        (p.municipality && p.municipality.toLowerCase().includes(q))
                     );
+                },
+
+                handleFileSelection(event) {
+                    const files = event.target.files;
+                    this.selectedNewFiles = [];
+                    for (let i = 0; i < files.length; i++) {
+                        // Pre-populate input with clean filename without extension as default custom name suggestion
+                        let defaultName = files[i].name.substring(0, files[i].name.lastIndexOf('.')) || files[i].name;
+                        this.selectedNewFiles.push({
+                            file: files[i],
+                            customName: defaultName
+                        });
+                    }
                 },
 
                 openModal() {
                     this.isEditing = false;
-                    this.form = { id: null, property_id: '', name: '', address: '', type: 'Residential', status: 'Occupied', valuation: '', image: '', report_notes: '' };
+                    this.selectedNewFiles = [];
+                    this.form = { id: null, property_id: '', name: '', address: '', category: 'Residential', municipality: 'Gurugram', status: 'Occupied', area: '', image: '', notes: '', documents: [] };
+                    const imageInput = document.getElementById('imageFile');
+                    if (imageInput) imageInput.value = '';
+                    const pdfInput = document.getElementById('pdfFiles');
+                    if (pdfInput) pdfInput.value = '';
                     this.isModalOpen = true;
                 },
 
                 editProperty(property) {
                     this.isEditing = true;
+                    this.selectedNewFiles = [];
                     this.form = { ...property };
+                    const imageInput = document.getElementById('imageFile');
+                    if (imageInput) imageInput.value = '';
+                    const pdfInput = document.getElementById('pdfFiles');
+                    if (pdfInput) pdfInput.value = '';
                     this.isModalOpen = true;
                 },
 
@@ -348,37 +450,108 @@
                 },
 
                 async saveProperty() {
+                    this.uploading = true;
+                    let imageUrl = this.form.image;
+
+                    const imageInput = document.getElementById('imageFile');
+                    if (imageInput && imageInput.files.length > 0) {
+                        const file = imageInput.files[0];
+                        const fileExt = file.name.split('.').pop();
+                        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+                        
+                        let { error: uploadError } = await _supabase.storage
+                            .from('property-images')
+                            .upload(fileName, file);
+
+                        if (uploadError) {
+                            alert('Image upload failed: ' + uploadError.message);
+                            this.uploading = false;
+                            return;
+                        }
+
+                        const { data: publicURLData } = _supabase.storage
+                            .from('property-images')
+                            .getPublicUrl(fileName);
+
+                        imageUrl = publicURLData.publicUrl;
+                    }
+
                     const payload = {
                         property_id: this.form.property_id,
                         name: this.form.name,
                         address: this.form.address,
-                        type: this.form.type,
+                        category: this.form.category,
+                        municipality: this.form.municipality,
                         status: this.form.status,
-                        valuation: this.form.valuation ? parseFloat(this.form.valuation) : null,
-                        image: this.form.image,
-                        report_notes: this.form.report_notes
+                        area: this.form.area,
+                        image: imageUrl,
+                        notes: this.form.notes
                     };
 
+                    let targetPropertyId = this.form.id;
+
                     if (this.isEditing) {
-                        let { error } = await _supabase.from('properties').update(payload).eq('id', this.form.id);
+                        let { error } = await _supabase.from('properties').update(payload).eq('id', targetPropertyId);
                         if (error) {
                             alert('Update failed: ' + error.message);
+                            this.uploading = false;
                             return;
                         }
                     } else {
-                        let { error } = await _supabase.from('properties').insert([payload]);
+                        let { data, error } = await _supabase.from('properties').insert([payload]).select();
                         if (error) {
                             alert('Insert failed: ' + error.message);
+                            this.uploading = false;
                             return;
+                        }
+                        targetPropertyId = data[0].id;
+                    }
+
+                    // Loop through selected files with custom names and upload
+                    if (this.selectedNewFiles.length > 0) {
+                        for (let item of this.selectedNewFiles) {
+                            const file = item.file;
+                            const fileExt = file.name.split('.').pop();
+                            const uniqueFileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+
+                            let { error: pdfUploadError } = await _supabase.storage
+                                .from('property-documents')
+                                .upload(uniqueFileName, file);
+
+                            if (!pdfUploadError) {
+                                const { data: pdfPublicUrlData } = _supabase.storage
+                                    .from('property-documents')
+                                    .getPublicUrl(uniqueFileName);
+
+                                await _supabase.from('property_documents').insert([{
+                                    property_id: targetPropertyId,
+                                    file_name: file.name,
+                                    custom_name: item.customName || file.name,
+                                    file_url: pdfPublicUrlData.publicUrl
+                                }]);
+                            }
                         }
                     }
                     
                     await this.fetchProperties();
+                    this.uploading = false;
                     this.closeModal();
                 },
 
+                async deleteDocument(docId) {
+                    if (confirm('Are you sure you want to remove this attached PDF?')) {
+                        let { error } = await _supabase.from('property_documents').delete().eq('id', docId);
+                        if (error) {
+                            alert('Failed to delete document: ' + error.message);
+                        } else {
+                            this.form.documents = this.form.documents.filter(d => d.id !== docId);
+                            await this.fetchProperties();
+                        }
+                    }
+                },
+
                 async deleteProperty(id) {
-                    if (confirm('Are you sure you want to delete this property record from the cloud database?')) {
+                    if (confirm('Are you sure you want to delete this property record and all its documents from the cloud database?')) {
                         let { error } = await _supabase.from('properties').delete().eq('id', id);
                         if (error) {
                             alert('Delete failed: ' + error.message);
