@@ -37,7 +37,6 @@
                     Unlock Portal
                 </button>
             </form>
-            <p class="text-[11px] text-slate-400 mt-6">Default: <span class="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-600">admin123</span></p>
         </div>
     </div>
 
@@ -119,7 +118,8 @@
                             <!-- Top Tags -->
                             <div class="absolute top-3.5 left-3.5 right-3.5 flex justify-between items-center z-10">
                                 <span class="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg shadow-sm" x-text="property.property_id"></span>
-                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.type || 'Residential'"></span>
+                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.category || 'Residential'"></span>
+                                <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.municipality || 'Gurugram'"></span>
                             </div>
 
                             <!-- Bottom Title Overlay Inside Image Header -->
@@ -135,11 +135,11 @@
                         <!-- Card Content Body -->
                         <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
                             
-                            <!-- Financial & Status Pills -->
+                            <!-- Area & Status Pills -->
                             <div class="grid grid-cols-2 gap-2 bg-slate-50/80 p-3 rounded-xl border border-slate-100 text-xs">
                                 <div>
-                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Valuation</span>
-                                    <span class="font-bold text-slate-900 mt-0.5 block">$<span x-text="property.valuation ? Number(property.valuation).toLocaleString() : '0'"></span></span>
+                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Area</span>
+                                    <span class="font-bold text-slate-900 mt-0.5 block"><span x-text="property.area ? Number(property.area).toLocaleString() : '0'"></span></span>
                                 </div>
                                 <div>
                                     <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Status</span>
@@ -150,12 +150,12 @@
                                 </div>
                             </div>
 
-                            <!-- Inspection Notes / Reports Box -->
+                            <!-- Notes / Reports Box -->
                             <div class="text-xs">
                                 <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1 flex items-center justify-between">
-                                    <span><i class="fa-solid fa-clipboard-list mr-1 text-[9px]"></i> Site & Inspection Report</span>
+                                    <span><i class="fa-solid fa-clipboard-list mr-1 text-[9px]"></i> Notes </span>
                                 </div>
-                                <p class="text-slate-600 bg-slate-50/50 p-2.5 rounded-xl border border-slate-100 leading-relaxed italic line-clamp-2" x-text="property.report_notes || 'No activity notes logged.'"></p>
+                                <p class="text-slate-600 bg-slate-50/50 p-2.5 rounded-xl border border-slate-100 leading-relaxed italic line-clamp-2" x-text="property.notes || 'No activity notes logged.'"></p>
                             </div>
 
                             <!-- Action Buttons -->
@@ -270,7 +270,7 @@
                 authenticated: false,
                 passwordInput: '',
                 authError: '',
-                masterPassword: 'admin123',
+                masterPassword: '#Himanshu21',
                 
                 loading: true,
                 searchQuery: '',
