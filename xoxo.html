@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PMS</title>
+    <title>PMS - Property Management System</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome -->
@@ -16,24 +16,24 @@
         [x-cloak] { display: none !important; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white" x-data="propertyApp()">
+<body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen selection:bg-blue-600 selection:text-white" x-data="propertyApp()">
 
     <!-- ================= 1. PASSWORD LOCK SCREEN ================= -->
     <div x-cloak x-show="!authenticated" class="fixed inset-0 bg-slate-950/70 backdrop-blur-md z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 border border-slate-100 text-center">
-            <div class="w-14 h-14 bg-slate-900 text-white rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-slate-900/20 text-xl">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 border border-slate-100 text-center">
+            <div class="w-16 h-16 bg-slate-900 text-white rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-lg shadow-slate-900/20 text-2xl">
                 <i class="fa-solid fa-lock"></i>
             </div>
-            <h1 class="text-xl font-bold text-slate-900 tracking-tight">Restricted Access</h1>
-            <p class="text-xs text-slate-500 mt-1 mb-6">Enter master passcode to unlock portfolio.</p>
+            <h1 class="text-2xl font-bold text-slate-900 tracking-tight">Restricted Access</h1>
+            <p class="text-sm text-slate-600 mt-1 mb-6">Enter master passcode to unlock portfolio.</p>
             
             <form @submit.prevent="authenticate">
                 <div class="mb-4">
                     <input type="password" x-model="passwordInput" placeholder="Master passcode..." 
-                        class="w-full px-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-center text-sm font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition">
-                    <p x-show="authError" class="text-red-500 text-xs mt-2 font-medium" x-text="authError"></p>
+                        class="w-full px-4 py-3.5 bg-slate-50 rounded-xl border border-slate-200 text-center text-base font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition">
+                    <p x-show="authError" class="text-red-500 text-sm mt-2 font-medium" x-text="authError"></p>
                 </div>
-                <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-3 rounded-xl transition duration-200 shadow-md shadow-slate-900/10 text-sm">
+                <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-3.5 rounded-xl transition duration-200 shadow-md shadow-slate-900/10 text-base">
                     Unlock Portal
                 </button>
             </form>
@@ -44,23 +44,23 @@
     <div x-cloak x-show="authenticated" class="flex flex-col min-h-screen">
         
         <!-- Clean Minimal Header -->
-        <header class="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-30">
-            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-                <div class="flex items-center space-x-3.5">
-                    <div class="w-10 h-10 bg-slate-900 text-white rounded-xl flex items-center justify-center shadow-md shadow-slate-900/10">
-                        <i class="fa-solid fa-building text-sm"></i>
+        <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-30 shadow-xs">
+            <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center shadow-md shadow-slate-900/10 text-lg">
+                        <i class="fa-solid fa-building"></i>
                     </div>
                     <div>
-                        <span class="font-bold text-sm text-slate-900 tracking-tight block">MFO</span>
-                        <span class="text-[11px] text-slate-400 font-medium tracking-wide">Property Management System</span>
+                        <span class="font-extrabold text-lg text-slate-900 tracking-tight block">MFO</span>
+                        <span class="text-xs text-slate-500 font-semibold tracking-wide">Property Management System</span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <button @click="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 shadow-sm">
-                        <i class="fa-solid fa-plus text-[10px]"></i>
+                <div class="flex items-center space-x-4">
+                    <button @click="openModal()" class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-3 rounded-2xl text-sm font-bold transition flex items-center space-x-2.5 shadow-md">
+                        <i class="fa-solid fa-plus text-xs"></i>
                         <span>Add Property</span>
                     </button>
-                    <button @click="lockApp()" class="w-9 h-9 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-xl transition text-xs" title="Lock Portal">
+                    <button @click="lockApp()" class="w-12 h-12 flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-2xl transition text-sm font-bold" title="Lock Portal">
                         <i class="fa-solid fa-lock"></i>
                     </button>
                 </div>
@@ -71,116 +71,116 @@
         <main class="flex-grow max-w-7xl w-full mx-auto px-6 py-10">
             
             <!-- Dashboard Controls Header -->
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
                 <div>
-                    <h2 class="text-xl font-bold text-slate-900 tracking-tight">Active Portfolio</h2>
-                    <p class="text-xs text-slate-500 mt-0.5">Real-time cloud property records, files, and site reports.</p>
+                    <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Active Portfolio</h2>
+                    <p class="text-sm text-slate-600 mt-1">Real-time cloud property records, files, and site reports.</p>
                 </div>
-                <div class="w-full sm:w-72 relative">
-                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                        <i class="fa-solid fa-search text-xs"></i>
+                <div class="w-full md:w-96 relative">
+                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+                        <i class="fa-solid fa-search text-sm"></i>
                     </span>
                     <input type="text" x-model="searchQuery" placeholder="Search ID, address, notes..." 
-                        class="w-full pl-9 pr-4 py-2.5 bg-white rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                        class="w-full pl-11 pr-4 py-3.5 bg-white rounded-2xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-900 transition shadow-xs">
                 </div>
             </div>
 
             <!-- Loading Spinner -->
             <div x-show="loading" class="text-center py-24">
-                <i class="fa-solid fa-circle-notch fa-spin text-2xl text-slate-900 mb-3"></i>
-                <p class="text-xs text-slate-400 font-medium tracking-wide">Fetching cloud records...</p>
+                <i class="fa-solid fa-circle-notch fa-spin text-3xl text-slate-900 mb-3"></i>
+                <p class="text-sm text-slate-500 font-semibold tracking-wide">Fetching cloud records...</p>
             </div>
 
             <!-- Empty State -->
             <template x-if="!loading && filteredProperties.length === 0">
-                <div class="bg-white rounded-2xl border border-slate-100 p-16 text-center shadow-sm">
-                    <div class="w-12 h-12 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-base">
+                <div class="bg-white rounded-3xl border border-slate-200 p-16 text-center shadow-sm">
+                    <div class="w-16 h-16 bg-slate-50 text-slate-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-xl">
                         <i class="fa-solid fa-folder-open"></i>
                     </div>
-                    <h3 class="text-sm font-bold text-slate-900">No properties found</h3>
-                    <p class="text-xs text-slate-400 mt-1 mb-6">Initialize your asset register by creating your first record.</p>
-                    <button @click="openModal()" class="bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-medium hover:bg-slate-800 transition">
+                    <h3 class="text-lg font-bold text-slate-900">No properties found</h3>
+                    <p class="text-sm text-slate-500 mt-1 mb-6">Initialize your asset register by creating your first record.</p>
+                    <button @click="openModal()" class="bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-bold hover:bg-slate-800 transition">
                         Add First Property
                     </button>
                 </div>
             </template>
 
             <!-- Modern Card Grid Layout -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" x-show="!loading">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-show="!loading">
                 <template x-for="property in filteredProperties" :key="property.id">
-                    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+                    <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
                         
                         <!-- Card Image Banner / Aesthetic Gradient Header -->
-                        <div class="h-44 relative bg-slate-100 bg-cover bg-center overflow-hidden" 
+                        <div class="h-52 relative bg-slate-100 bg-cover bg-center overflow-hidden" 
                              :style="property.image ? `background-image: url('${property.image}')` : 'background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);'">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent"></div>
                             
                             <!-- Top Tags -->
-                            <div class="absolute top-3.5 left-3.5 right-3.5 flex justify-between items-center z-10 flex-wrap gap-1">
-                                <span class="bg-white/90 backdrop-blur-md text-slate-900 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg shadow-sm" x-text="property.property_id"></span>
-                                <div class="flex items-center gap-1">
-                                    <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.category || 'Residential'"></span>
-                                    <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2.5 py-1 rounded-lg tracking-wide uppercase" x-text="property.municipality || 'Gurugram'"></span>
+                            <div class="absolute top-4 left-4 right-4 flex justify-between items-center z-10 flex-wrap gap-2">
+                                <span class="bg-white/95 backdrop-blur-md text-slate-900 text-xs font-mono font-extrabold px-3 py-1.5 rounded-xl shadow-sm" x-text="property.property_id"></span>
+                                <div class="flex items-center gap-1.5">
+                                    <span class="bg-slate-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-xl tracking-wide uppercase" x-text="property.category || 'Residential'"></span>
+                                    <span class="bg-slate-900/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-xl tracking-wide uppercase" x-text="property.municipality || 'Gurugram'"></span>
                                 </div>
                             </div>
 
                             <!-- Bottom Title Overlay Inside Image Header -->
-                            <div class="absolute bottom-3.5 left-3.5 right-3.5 z-10">
-                                <h3 class="font-bold text-white text-base tracking-tight drop-shadow-sm truncate" x-text="property.name"></h3>
-                                <p class="text-slate-200 text-[11px] flex items-center space-x-1 mt-0.5 opacity-90 truncate">
-                                    <i class="fa-solid fa-location-dot text-[10px] shrink-0"></i>
+                            <div class="absolute bottom-4 left-4 right-4 z-10">
+                                <h3 class="font-extrabold text-white text-lg tracking-tight drop-shadow-sm truncate" x-text="property.name"></h3>
+                                <p class="text-slate-100 text-xs font-medium flex items-center space-x-1.5 mt-1 opacity-95 truncate">
+                                    <i class="fa-solid fa-location-dot text-xs shrink-0"></i>
                                     <span x-text="property.address"></span>
                                 </p>
                             </div>
                         </div>
 
                         <!-- Card Content Body -->
-                        <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
+                        <div class="p-6 flex-grow flex flex-col justify-between space-y-5">
                             
                             <!-- Area & Status Pills -->
-                            <div class="grid grid-cols-2 gap-2 bg-slate-50/80 p-3 rounded-xl border border-slate-100 text-xs">
+                            <div class="grid grid-cols-2 gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
                                 <div>
-                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Area</span>
-                                    <span class="font-bold text-slate-900 mt-0.5 block"><span x-text="property.area ? Number(property.area).toLocaleString() : '0'"></span></span>
+                                    <span class="block text-xs uppercase tracking-wider text-slate-500 font-bold">Area</span>
+                                    <span class="font-extrabold text-slate-900 text-sm mt-0.5 block"><span x-text="property.area ? Number(property.area).toLocaleString() : '0'"></span> sq yd</span>
                                 </div>
                                 <div>
-                                    <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-semibold">Status</span>
-                                    <span class="font-semibold text-slate-700 mt-0.5 block inline-flex items-center gap-1.5">
-                                        <span class="w-1.5 h-1.5 rounded-full" :class="property.status === 'Occupied' ? 'bg-emerald-500' : (property.status === 'Vacant' ? 'bg-amber-500' : 'bg-blue-500')"></span>
+                                    <span class="block text-xs uppercase tracking-wider text-slate-500 font-bold">Status</span>
+                                    <span class="font-bold text-slate-800 text-sm mt-0.5 block inline-flex items-center gap-2">
+                                        <span class="w-2.5 h-2.5 rounded-full" :class="property.status === 'Occupied' ? 'bg-emerald-500' : (property.status === 'Vacant' ? 'bg-amber-500' : 'bg-blue-500')"></span>
                                         <span x-text="property.status || 'Vacant'"></span>
                                     </span>
                                 </div>
                             </div>
 
                             <!-- Notes Box -->
-                            <div class="text-xs">
-                                <div class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1">
-                                    <span><i class="fa-solid fa-clipboard-list mr-1 text-[9px]"></i> Notes</span>
+                            <div>
+                                <div class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-1.5">
+                                    <span><i class="fa-solid fa-clipboard-list mr-1.5 text-xs"></i> Notes</span>
                                 </div>
-                                <p class="text-slate-600 bg-slate-50/50 p-2.5 rounded-xl border border-slate-100 leading-relaxed italic line-clamp-2" x-text="property.notes || 'No activity notes logged.'"></p>
+                                <p class="text-slate-700 text-sm bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100 leading-relaxed italic line-clamp-2 font-medium" x-text="property.notes || 'No activity notes logged.'"></p>
                             </div>
 
                             <!-- Documents Counter Badge / Preview with Custom Names -->
-                            <div class="text-xs" x-show="property.documents && property.documents.length > 0">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mb-1 block"><i class="fa-solid fa-file-pdf text-red-500 mr-1"></i> Attached Documents (<span x-text="property.documents.length"></span>)</span>
-                                <div class="flex flex-wrap gap-1.5 mt-1">
+                            <div x-show="property.documents && property.documents.length > 0">
+                                <span class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2 block"><i class="fa-solid fa-file-pdf text-red-500 mr-1.5 text-sm"></i> Attached Documents (<span x-text="property.documents.length"></span>)</span>
+                                <div class="flex flex-wrap gap-2">
                                     <template x-for="doc in property.documents" :key="doc.id">
-                                        <a :href="doc.file_url" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] px-2.5 py-1 rounded-lg flex items-center space-x-1.5 border border-slate-200 shadow-sm" :title="doc.file_name">
-                                            <i class="fa-solid fa-file-pdf text-red-500"></i>
-                                            <span class="font-semibold truncate max-w-[150px]" x-text="doc.custom_name || doc.file_name"></span>
+                                        <a :href="doc.file_url" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs px-3 py-1.5 rounded-xl flex items-center space-x-2 border border-slate-200 font-semibold shadow-xs" :title="doc.file_name">
+                                            <i class="fa-solid fa-file-pdf text-red-500 text-sm"></i>
+                                            <span class="truncate max-w-[160px]" x-text="doc.custom_name || doc.file_name"></span>
                                         </a>
                                     </template>
                                 </div>
                             </div>
 
                             <!-- Action Buttons -->
-                            <div class="flex items-center justify-end space-x-2 pt-3 border-t border-slate-100">
-                                <button @click="editProperty(property)" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-medium transition flex items-center space-x-1">
-                                    <i class="fa-solid fa-pen-to-square text-[10px]"></i>
+                            <div class="flex items-center justify-end space-x-3 pt-4 border-t border-slate-100">
+                                <button @click="editProperty(property)" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-sm font-bold transition flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-pen-to-square text-xs"></i>
                                     <span>Edit</span>
                                 </button>
-                                <button @click="deleteProperty(property.id)" class="px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg text-xs font-medium transition flex items-center space-x-1">
-                                    <i class="fa-solid fa-trash text-[10px]"></i>
+                                <button @click="deleteProperty(property.id)" class="px-4 py-2.5 bg-red-50 hover:bg-red-100 text-red-600 rounded-xl text-sm font-bold transition flex items-center space-x-1.5">
+                                    <i class="fa-solid fa-trash text-xs"></i>
                                     <span>Delete</span>
                                 </button>
                             </div>
@@ -195,39 +195,39 @@
 
         <!-- ================= 3. ADD/EDIT PROPERTY MODAL ================= -->
         <div x-cloak x-show="isModalOpen" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
-            <div @click.outside="closeModal()" class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-8 border border-slate-100 my-8">
+            <div @click.outside="closeModal()" class="bg-white rounded-3xl shadow-2xl max-w-xl w-full p-8 border border-slate-100 my-8">
                 <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-100">
                     <div>
-                        <h3 class="text-base font-bold text-slate-900 tracking-tight" x-text="isEditing ? 'Edit Property Record' : 'Register New Property'"></h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Configure asset details, images, and upload multiple PDF files with custom titles.</p>
+                        <h3 class="text-lg font-extrabold text-slate-900 tracking-tight" x-text="isEditing ? 'Edit Property Record' : 'Register New Property'"></h3>
+                        <p class="text-xs text-slate-500 mt-0.5 font-medium">Configure asset details, compressed images, and attached documents.</p>
                     </div>
-                    <button @click="closeModal()" class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 hover:text-slate-600 transition"><i class="fa-solid fa-xmark text-sm"></i></button>
+                    <button @click="closeModal()" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-slate-800 transition"><i class="fa-solid fa-xmark text-base"></i></button>
                 </div>
 
-                <form @submit.prevent="saveProperty" class="space-y-4 text-xs">
+                <form @submit.prevent="saveProperty" class="space-y-5 text-sm">
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Property ID</label>
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Property ID</label>
                             <input type="text" x-model="form.property_id" required placeholder="e.g. PROP-101" 
-                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Property Name</label>
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Property Name</label>
                             <input type="text" x-model="form.name" required placeholder="e.g. Sunset Heights Unit 4B" 
-                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Full Street Address</label>
+                        <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Full Street Address</label>
                         <input type="text" x-model="form.address" required placeholder="e.g. 742 Evergreen Terrace, Sector 54" 
-                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                     </div>
 
                     <div class="grid grid-cols-3 gap-3">
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Category</label>
-                            <select x-model="form.category" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Category</label>
+                            <select x-model="form.category" class="w-full px-3.5 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                                 <option value="Residential">Residential</option>
                                 <option value="Commercial">Commercial</option>
                                 <option value="Industrial">Industrial</option>
@@ -235,13 +235,13 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Municipality</label>
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Municipality</label>
                             <input type="text" x-model="form.municipality" placeholder="e.g. Gurugram" 
-                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Status</label>
-                            <select x-model="form.status" class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Status</label>
+                            <select x-model="form.status" class="w-full px-3.5 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                                 <option value="Occupied">Occupied</option>
                                 <option value="Vacant">Vacant</option>
                                 <option value="Under Maintenance">Under Maintenance</option>
@@ -251,50 +251,50 @@
 
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Area</label>
-                            <input type="text" x-model="form.area" placeholder="e.g. 2500 sq.ft" 
-                                class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Area (sq yd)</label>
+                            <input type="text" x-model="form.area" placeholder="e.g. 250" 
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                         <div>
-                            <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Property Image File</label>
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Property Image (Auto-compressed)</label>
                             <input type="file" id="imageFile" accept="image/*" 
-                                class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-[11px] text-slate-500 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:text-[11px] file:font-semibold file:bg-slate-900 file:text-white hover:file:bg-slate-800 transition">
+                                class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-600 font-medium file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-slate-900 file:text-white hover:file:bg-slate-800 transition">
                         </div>
                     </div>
 
                     <!-- Multi-PDF File Upload Section with Custom Naming -->
                     <div>
-                        <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Upload PDFs & Assign Custom Names</label>
+                        <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Upload PDFs & Assign Custom Names</label>
                         <input type="file" id="pdfFiles" accept="application/pdf" multiple @change="handleFileSelection"
-                            class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-[11px] text-slate-500 file:mr-2 file:py-1 file:px-2 file:rounded-lg file:border-0 file:text-[11px] file:font-semibold file:bg-red-600 file:text-white hover:file:bg-red-700 transition">
+                            class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-600 font-medium file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-red-600 file:text-white hover:file:bg-red-700 transition">
                     </div>
 
                     <!-- Dynamic List of Selected Files with Custom Name Inputs -->
                     <template x-if="selectedNewFiles.length > 0">
-                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
-                            <span class="block font-semibold text-slate-600 uppercase tracking-wider">Configure Display Names:</span>
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
+                            <span class="block font-bold text-slate-700 uppercase tracking-wider text-xs">Configure Display Names:</span>
                             <template x-for="(item, index) in selectedNewFiles" :key="index">
-                                <div class="bg-white p-2.5 rounded-lg border border-slate-200 flex flex-col gap-1.5">
-                                    <span class="text-[10px] text-slate-400 truncate font-mono">File: <span x-text="item.file.name"></span></span>
+                                <div class="bg-white p-3 rounded-xl border border-slate-200 flex flex-col gap-2">
+                                    <span class="text-xs text-slate-500 truncate font-mono">File: <span x-text="item.file.name"></span></span>
                                     <input type="text" x-model="item.customName" placeholder="Enter display name (e.g. Sale Deed, Floor Plan)..." required
-                                        class="w-full px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-lg focus:bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 text-xs">
+                                        class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-1 focus:ring-slate-900 text-sm font-medium">
                                 </div>
                             </template>
                         </div>
                     </template>
 
                     <!-- Existing Files List when Editing -->
-                    <div x-show="isEditing && form.documents && form.documents.length > 0" class="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                        <span class="block font-semibold text-slate-600 uppercase tracking-wider mb-2">Existing Attached PDFs:</span>
-                        <div class="space-y-1.5 max-h-32 overflow-y-auto">
+                    <div x-show="isEditing && form.documents && form.documents.length > 0" class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <span class="block font-bold text-slate-700 uppercase tracking-wider mb-3 text-xs">Existing Attached PDFs:</span>
+                        <div class="space-y-2 max-h-40 overflow-y-auto">
                             <template x-for="doc in form.documents" :key="doc.id">
-                                <div class="flex items-center justify-between bg-white px-3 py-1.5 rounded-lg border border-slate-200">
-                                    <a :href="doc.file_url" target="_blank" class="text-blue-600 hover:underline truncate flex items-center space-x-1.5">
-                                        <i class="fa-solid fa-file-pdf text-red-500"></i>
-                                        <span class="font-semibold truncate" x-text="doc.custom_name || doc.file_name"></span>
+                                <div class="flex items-center justify-between bg-white px-3.5 py-2 rounded-xl border border-slate-200">
+                                    <a :href="doc.file_url" target="_blank" class="text-blue-600 hover:underline truncate flex items-center space-x-2 font-semibold">
+                                        <i class="fa-solid fa-file-pdf text-red-500 text-base"></i>
+                                        <span class="truncate" x-text="doc.custom_name || doc.file_name"></span>
                                     </a>
-                                    <button type="button" @click="deleteDocument(doc.id)" class="text-red-500 hover:text-red-700 p-1">
-                                        <i class="fa-solid fa-trash text-xs"></i>
+                                    <button type="button" @click="deleteDocument(doc.id)" class="text-red-500 hover:text-red-700 p-1.5">
+                                        <i class="fa-solid fa-trash text-sm"></i>
                                     </button>
                                 </div>
                             </template>
@@ -302,15 +302,15 @@
                     </div>
 
                     <div>
-                        <label class="block font-semibold text-slate-600 uppercase tracking-wider mb-1.5">Notes & Reports</label>
+                        <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Notes & Reports</label>
                         <textarea x-model="form.notes" rows="3" placeholder="Enter periodic maintenance notes, tenant feedback, inspection reports..." 
-                            class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition"></textarea>
+                            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition"></textarea>
                     </div>
 
                     <div class="flex justify-end space-x-3 pt-5 border-t border-slate-100">
-                        <button type="button" @click="closeModal()" class="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-medium transition">Cancel</button>
-                        <button type="submit" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-medium transition shadow-md shadow-slate-900/10 flex items-center space-x-2" :disabled="uploading">
-                            <span x-show="uploading"><i class="fa-solid fa-circle-notch fa-spin mr-1"></i> Saving & Uploading...</span>
+                        <button type="button" @click="closeModal()" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-2xl font-bold transition">Cancel</button>
+                        <button type="submit" class="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white rounded-2xl font-bold transition shadow-md shadow-slate-900/10 flex items-center space-x-2" :disabled="uploading">
+                            <span x-show="uploading"><i class="fa-solid fa-circle-notch fa-spin mr-1.5"></i> Compressing & Saving...</span>
                             <span x-show="!uploading" x-text="isEditing ? 'Save Changes' : 'Save Property'"></span>
                         </button>
                     </div>
@@ -320,15 +320,7 @@
 
     </div>
 
-    <!-- ================= 4. DATABASE SQL UPDATE NOTE ================= -->
-    <!-- 
-      If you haven't already added the `custom_name` column to your Supabase table, 
-      run this quick SQL command in your Supabase SQL Editor:
-      
-      alter table public.property_documents add column if not exists custom_name text;
-    -->
-
-    <!-- ================= 5. APP LOGIC ================= -->
+    <!-- ================= 4. APP LOGIC ================= -->
     <script>
         const SUPABASE_URL = 'https://gykkkehuhkoudiiyqagu.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5a2trZWh1aGtvdWRpaXlxYWd1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYzMzg1ODMsImV4cCI6MjEwMTkxNDU4M30.BMu-dJ0yARYFNahAjvN6D_yW2qXg_WfQc0db3RCmRiI'.trim();
@@ -340,7 +332,7 @@
                 authenticated: false,
                 passwordInput: '',
                 authError: '',
-                masterPassword: '#Himanshu21',
+                masterPassword: '1963',
                 
                 loading: true,
                 uploading: false,
@@ -375,7 +367,7 @@
                         this.authError = '';
                         this.passwordInput = '';
                     } else {
-                        this.authError = 'Incorrect master passcode. Default is admin123';
+                        this.authError = 'Incorrect master passcode.';
                     }
                 },
 
@@ -410,11 +402,46 @@
                     );
                 },
 
+                // Client-side image compression function for space optimization
+                async compressImage(file, maxWidth = 1200, quality = 0.75) {
+                    return new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onload = (event) => {
+                            const img = new Image();
+                            img.src = event.target.result;
+                            img.onload = () => {
+                                const canvas = document.createElement('canvas');
+                                let width = img.width;
+                                let height = img.height;
+
+                                if (width > maxWidth) {
+                                    height = Math.round((height * maxWidth) / width);
+                                    width = maxWidth;
+                                }
+
+                                canvas.width = width;
+                                canvas.height = height;
+
+                                const ctx = canvas.getContext('2d');
+                                ctx.drawImage(img, 0, 0, width, height);
+
+                                canvas.toBlob((blob) => {
+                                    const compressedFile = new File([blob], file.name, {
+                                        type: 'image/jpeg',
+                                        lastModified: Date.now()
+                                    });
+                                    resolve(compressedFile);
+                                }, 'image/jpeg', quality);
+                            };
+                        };
+                    });
+                },
+
                 handleFileSelection(event) {
                     const files = event.target.files;
                     this.selectedNewFiles = [];
                     for (let i = 0; i < files.length; i++) {
-                        // Pre-populate input with clean filename without extension as default custom name suggestion
                         let defaultName = files[i].name.substring(0, files[i].name.lastIndexOf('.')) || files[i].name;
                         this.selectedNewFiles.push({
                             file: files[i],
@@ -455,9 +482,12 @@
 
                     const imageInput = document.getElementById('imageFile');
                     if (imageInput && imageInput.files.length > 0) {
-                        const file = imageInput.files[0];
-                        const fileExt = file.name.split('.').pop();
-                        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+                        let file = imageInput.files[0];
+                        
+                        // Automatically compress image before uploading to optimize cloud storage space
+                        file = await this.compressImage(file, 1200, 0.75);
+
+                        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.jpg`;
                         
                         let { error: uploadError } = await _supabase.storage
                             .from('property-images')
