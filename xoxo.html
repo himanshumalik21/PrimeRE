@@ -107,7 +107,7 @@
             <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10">
                 <div>
                     <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Active Portfolio</h2>
-                    <p class="text-sm text-slate-600 mt-1">Real-time cloud property records, files, and tenant information. Click any card to manage tenants.</p>
+                    <p class="text-sm text-slate-600 mt-1">Real-time cloud property records, files, and tenant information. Click any card to edit property details.</p>
                 </div>
                 <div class="w-full md:w-96 relative">
                     <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
@@ -141,7 +141,7 @@
             <!-- Modern Card Grid Layout -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" x-show="!loading">
                 <template x-for="property in filteredProperties" :key="property.id">
-                    <div @click="openTenantManager(property)" class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer relative">
+                    <div @click="editProperty(property)" class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer relative">
                         
                         <!-- Card Image Banner / Aesthetic Gradient Header -->
                         <div class="h-52 relative bg-slate-100 bg-cover bg-center overflow-hidden" 
@@ -185,13 +185,32 @@
                                 </div>
                             </div>
 
-                            <!-- Tenants Preview Badge -->
-                            <div class="bg-blue-50/50 p-3.5 rounded-2xl border border-blue-100 flex items-center justify-between">
+                            <!-- Tenants Preview Badge & Manage Tenant Button -->
+                            <div @click.stop class="bg-blue-50/50 p-3.5 rounded-2xl border border-blue-100 flex items-center justify-between">
                                 <div class="flex items-center space-x-2 text-blue-900 text-xs font-bold">
                                     <i class="fa-solid fa-users text-sm"></i>
                                     <span>Tenants: <span x-text="property.tenants ? property.tenants.length : 0"></span></span>
                                 </div>
-                                <span class="text-xs text-blue-600 font-semibold underline">Manage Tenants &rarr;</span>
+                                <button @click="openTenantManager(property)" class="text-xs text-white bg-blue-600 hover:bg-blue-700 px-3 py-1.5 rounded-xl font-bold transition shadow-xs flex items-center space-x-1">
+                                    <span>Manage Tenant</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+
+                            <!-- Attached Documents Preview Section -->
+                            <div x-show="property.documents && property.documents.length > 0" @click.stop class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100">
+                                <div class="text-xs uppercase tracking-wider text-slate-500 font-bold mb-2 flex items-center justify-between">
+                                    <span><i class="fa-solid fa-file-pdf mr-1 text-red-500"></i> Documents</span>
+                                    <span class="text-[10px] bg-slate-200 px-1.5 py-0.5 rounded-md font-mono" x-text="property.documents.length"></span>
+                                </div>
+                                <div class="space-y-1.5 max-h-28 overflow-y-auto">
+                                    <template x-for="doc in property.documents" :key="doc.id">
+                                        <a :href="doc.file_url" target="_blank" class="flex items-center justify-between bg-white px-3 py-1.5 rounded-xl border border-slate-200 text-xs text-blue-600 hover:underline font-semibold">
+                                            <span class="truncate pr-2"><i class="fa-solid fa-paperclip text-slate-400 mr-1 text-[10px]"></i> <span x-text="doc.custom_name || doc.file_name"></span></span>
+                                            <i class="fa-solid fa-external-link text-[10px] text-slate-400 shrink-0"></i>
+                                        </a>
+                                    </template>
+                                </div>
                             </div>
 
                             <!-- Notes Box -->
@@ -222,7 +241,7 @@
 
         </main>
 
-        <!-- ================= 3. TENANT MANAGER MODAL (CLICK CARD) ================= -->
+        <!-- ================= 3. TENANT MANAGER MODAL ================= -->
         <div x-cloak x-show="isTenantModalOpen" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto">
             <div @click.outside="closeTenantModal()" class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 border border-slate-100 my-8">
                 <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-100">
@@ -426,12 +445,8 @@
                     <div class="grid grid-cols-3 gap-3">
                         <div>
                             <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Category</label>
-                            <select x-model="form.category" class="w-full px-3.5 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
-                                <option value="Residential">Residential</option>
-                                <option value="Commercial">Commercial</option>
-                                <option value="Industrial">Industrial</option>
-                                <option value="Land / Plot">Land / Plot</option>
-                            </select>
+                            <input type="text" x-model="form.category" required placeholder="e.g. Residential" 
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                         <div>
                             <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Municipality</label>
@@ -440,11 +455,8 @@
                         </div>
                         <div>
                             <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Status</label>
-                            <select x-model="form.status" class="w-full px-3.5 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
-                                <option value="Occupied">Occupied</option>
-                                <option value="Vacant">Vacant</option>
-                                <option value="Under Maintenance">Under Maintenance</option>
-                            </select>
+                            <input type="text" x-model="form.status" required placeholder="e.g. Occupied" 
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                     </div>
 
@@ -455,7 +467,7 @@
                                 class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl font-medium focus:bg-white focus:outline-none focus:ring-2 focus:ring-slate-900 transition">
                         </div>
                         <div>
-                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Property Image (Auto-compressed)</label>
+                            <label class="block font-bold text-slate-700 uppercase tracking-wider mb-2 text-xs">Property Image</label>
                             <input type="file" id="imageFile" accept="image/*" 
                                 class="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-600 font-medium file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-slate-900 file:text-white hover:file:bg-slate-800 transition">
                         </div>
