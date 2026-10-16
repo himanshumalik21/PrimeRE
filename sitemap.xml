@@ -1,41 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
   <url>
     <loc>https://theprimerealestates.com/</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/hero-residence.jpg</image:loc>
+      <image:title>The Prime Real Estates - Luxury Residential Advisory Delhi NCR</image:title>
+      <image:caption>Real Estate Thoughtfully Advised - Expatriate and Corporate Property Advisory</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/2.png</image:loc>
+      <image:title>Chanakyapuri Luxury Diplomatic Villa</image:title>
+      <image:caption>Independent Luxury Estate in Diplomatic Enclave, New Delhi</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/5.png</image:loc>
+      <image:title>Gurugram Golf Course Road Luxury Condominium Towers</image:title>
+      <image:caption>Executive condominiums on Golf Course Road, Gurugram</image:caption>
+    </image:image>
   </url>
+
+  <!-- Expat Residential Leasing -->
   <url>
     <loc>https://theprimerealestates.com/residential-leasing.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/2.png</image:loc>
+      <image:title>Chanakyapuri Diplomatic Residences</image:title>
+      <image:caption>Luxury independent residences and diplomatic bungalows in Chanakyapuri</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/1.png</image:loc>
+      <image:title>Vasant Vihar and South Delhi Luxury Apartments</image:title>
+      <image:caption>Architectural builder floors and penthouses in Vasant Vihar and Jor Bagh</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/7.png</image:loc>
+      <image:title>Luxury Living Room Suite</image:title>
+      <image:caption>Grand living room in executive Delhi NCR residential apartment</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/8.png</image:loc>
+      <image:title>Designer Modular Kitchen</image:title>
+      <image:caption>High-end modular kitchen for luxury expatriate rental residences</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/9.png</image:loc>
+      <image:title>Expatriate Family Bedroom and Children Study</image:title>
+      <image:caption>Family-oriented residential accommodations in Delhi NCR</image:caption>
+    </image:image>
   </url>
+
+  <!-- Corporate Housing & Relocation -->
   <url>
     <loc>https://theprimerealestates.com/corporate-housing.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/6.png</image:loc>
+      <image:title>Executive Serviced Suites and Corporate Housing</image:title>
+      <image:caption>Turn-key corporate housing and serviced apartments in Gurugram and Delhi NCR</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/5.png</image:loc>
+      <image:title>Corporate Condominiums Golf Course Road</image:title>
+      <image:caption>Multinational corporate relocation housing in Gurugram</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/corporate-relocation.jpg</image:loc>
+      <image:title>MNC Relocation Advisory</image:title>
+      <image:caption>B2B Employee Mobility and Corporate Housing Advisory</image:caption>
+    </image:image>
   </url>
+
+  <!-- Commercial, Industrial & Joint Ventures -->
   <url>
     <loc>https://theprimerealestates.com/commercial-investments.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/commercial-park.jpg</image:loc>
+      <image:title>Commercial Grade-A Office Parks</image:title>
+      <image:caption>Corporate park leasing in DLF Cyber City, Golf Course Road, and Aerocity</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/industrial-warehouse.jpg</image:loc>
+      <image:title>Industrial Logistics and Warehousing Parks</image:title>
+      <image:caption>Industrial land and logistics warehousing across Western Peripheral Expressway and North India</image:caption>
+    </image:image>
   </url>
+
+  <!-- Services Gateway -->
   <url>
     <loc>https://theprimerealestates.com/services.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- About The Firm & Leadership -->
   <url>
     <loc>https://theprimerealestates.com/about.html</loc>
     <lastmod>2026-10-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://theprimerealestates.com/img/advisory-meeting.jpg</image:loc>
+      <image:title>The Prime Real Estates Advisory Consultation</image:title>
+      <image:caption>Senior partners Virender Singh, Navneet Rana, and Himanshu Malik</image:caption>
+    </image:image>
   </url>
+
+  <!-- Contact & Private Enquiries -->
   <url>
     <loc>https://theprimerealestates.com/contact.html</loc>
     <lastmod>2026-10-16</lastmod>

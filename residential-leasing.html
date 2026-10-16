@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expat Residential Leasing & Diplomatic Residences | The Prime Real Estates</title>
     <meta name="description" content="Specialised residential leasing advisory for expatriate executives, diplomats, and international families in Delhi NCR. Handpicked residences in Chanakyapuri, Vasant Vihar, Jor Bagh, and Golf Course Road, Gurugram.">
+    <meta name="keywords" content="expat housing Delhi, diplomatic housing Chanakyapuri, expat apartments Vasant Vihar, luxury apartment rent Golf Course Road Gurgaon, Japanese expat rental Delhi NCR, diplomatic lease agreement India, luxury rental Jor Bagh">
     <link rel="canonical" href="https://theprimerealestates.com/residential-leasing.html">
     
+    <!-- Geo Meta Tags for Delhi NCR Local SEO -->
+    <meta name="geo.region" content="IN-DL">
+    <meta name="geo.placename" content="New Delhi, Chanakyapuri, Vasant Vihar, Gurugram">
+    <meta name="geo.position" content="28.5921;77.1895">
+    <meta name="ICBM" content="28.5921, 77.1895">
+
     <!-- Open Graph -->
+    <meta property="og:site_name" content="The Prime Real Estates">
     <meta property="og:title" content="Expat Residential Leasing & Diplomatic Residences | The Prime Real Estates">
-    <meta property="og:description" content="Discreet, independent residential leasing advisory for expatriates and diplomats in Delhi NCR.">
-    <meta property="og:image" content="https://theprimerealestates.com/img/chanakyapuri-estate.jpg">
+    <meta property="og:description" content="Discreet, independent residential leasing advisory for expatriates and diplomats in Delhi NCR. Handpicked residences in Chanakyapuri, Vasant Vihar, and Golf Course Road.">
+    <meta property="og:image" content="https://theprimerealestates.com/img/2.png">
     <meta property="og:url" content="https://theprimerealestates.com/residential-leasing.html">
     <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Expat Residential Leasing & Diplomatic Residences | The Prime Real Estates">
+    <meta name="twitter:description" content="Discreet residential advisory for expatriates and diplomats in Delhi NCR. Led by Himanshu Malik.">
+    <meta name="twitter:image" content="https://theprimerealestates.com/img/2.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,30 +79,123 @@
         }
     </style>
 
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 & Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-0H2MT335YJ');
+      gtag('config', 'G-0H2MT335YJ', {
+        send_page_view: true
+      });
+
+      // Track phone and WhatsApp conversions
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_phone_call', {
+              event_category: 'conversion',
+              event_label: el.getAttribute('href')
+            });
+          });
+        });
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_whatsapp_chat', {
+              event_category: 'conversion',
+              event_label: 'WhatsApp Click - Residential Page'
+            });
+          });
+        });
+      });
     </script>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theprimerealestates.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Expatriate Residential Leasing",
+          "item": "https://theprimerealestates.com/residential-leasing.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: Service with Himanshu Malik as Lead Liaison -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Expatriate Residential Leasing Advisory",
+      "@id": "https://theprimerealestates.com/residential-leasing.html#service",
+      "name": "Expatriate & Diplomatic Residential Leasing Advisory",
+      "serviceType": "Diplomatic & Expatriate Residential Leasing",
       "provider": {
         "@type": "RealEstateAgent",
+        "@id": "https://theprimerealestates.com/#organization",
         "name": "The Prime Real Estates",
         "telephone": "+91-9818926580",
         "email": "partners@theprimerealestates.com"
       },
-      "serviceType": "Residential Leasing",
-      "areaServed": ["Chanakyapuri", "Vasant Vihar", "Jor Bagh", "Sushant Lok", "Golf Course Road", "Delhi NCR"],
-      "description": "Bespoke relocation and residential leasing advisory for diplomats, expatriates, and multinational corporate executives in Delhi NCR."
+      "broker": {
+        "@type": "Person",
+        "name": "Himanshu Malik",
+        "jobTitle": "Senior Partner & Primary Liaison - Expatriate Leasing",
+        "telephone": "+91-9818926580",
+        "email": "partners@theprimerealestates.com"
+      },
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Chanakyapuri, New Delhi"},
+        {"@type": "AdministrativeArea", "name": "Vasant Vihar, New Delhi"},
+        {"@type": "AdministrativeArea", "name": "Jor Bagh, New Delhi"},
+        {"@type": "AdministrativeArea", "name": "Golf Course Road, Gurugram"},
+        {"@type": "AdministrativeArea", "name": "Sushant Lok Phase I, Gurugram"}
+      ],
+      "description": "Bespoke relocation, lease negotiation, and residential advisory for expatriate executives, embassy diplomats, and multinational families in Delhi NCR."
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: FAQPage for High-Ranking Search Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the diplomatic clause work in Delhi NCR residential leases?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Prime Real Estates structures standardized diplomatic clauses allowing expatriate tenants and diplomatic missions to terminate their lease prematurely without penalty in the event of an official recall, overseas reassignment, or diplomatic mission restructuring, usually with 30 to 60 days notice."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which residential enclaves in Delhi NCR are best for expatriate and diplomatic families?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For embassy diplomats and international civil servants, Chanakyapuri, Shanti Niketan, Jor Bagh, and Vasant Vihar provide unmatched security and proximity to the American Embassy School (AES) and The British School. In Gurugram, premier gated condominiums along Golf Course Road (such as DLF The Aralias, The Magnolias, and The Camellias) offer world-class clubhouses and international executive communities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Prime RE assist with move-in handover, utility setups, and FRRO registration?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our expatriate desk led by Himanshu Malik provides comprehensive move-in assistance including photographic inventory audits, high-speed fibre broadband installation, 100% generator power backup verification, multi-stage water filtration checks, and landlord document coordination for tenant FRRO registration."
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -639,6 +746,13 @@
             .then(async (response) => {
                 let json = await response.json();
                 if (response.status == 200) {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            event_category: 'form',
+                            event_label: 'Residential Leasing Request',
+                            value: 1
+                        });
+                    }
                     result.classList.remove('hidden', 'bg-rose-900/50', 'text-rose-200');
                     result.classList.add('bg-emerald-900/50', 'text-emerald-200');
                     result.innerHTML = "Thank you. Your residential brief has been received. A senior partner will contact you shortly.";

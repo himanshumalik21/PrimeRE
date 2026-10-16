@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /process-form.php
+Disallow: /xoxo*.html
 
+# Host
+Host: https://theprimerealestates.com
+
+# Sitemaps
 Sitemap: https://theprimerealestates.com/sitemap.xml

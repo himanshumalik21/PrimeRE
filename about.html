@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About The Firm & Leadership | The Prime Real Estates</title>
     <meta name="description" content="Discover The Prime Real Estates: an independent real estate advisory firm led by Virender Singh, Navneet Rana, and Himanshu Malik with three decades of combined execution excellence across Delhi NCR.">
+    <meta name="keywords" content="The Prime Real Estates partners, Virender Singh real estate, Himanshu Malik expat relocation, Navneet Rana healthcare real estate, Delhi NCR luxury real estate advisors, Chanakyapuri property advisory, Gurugram real estate partners">
     <link rel="canonical" href="https://theprimerealestates.com/about.html">
     
+    <!-- Geo Meta Tags for Delhi NCR Local SEO -->
+    <meta name="geo.region" content="IN-DL">
+    <meta name="geo.placename" content="New Delhi, Gurugram">
+    <meta name="geo.position" content="28.4595;77.0266">
+    <meta name="ICBM" content="28.4595, 77.0266">
+
     <!-- Open Graph -->
+    <meta property="og:site_name" content="The Prime Real Estates">
     <meta property="og:title" content="About The Firm & Leadership | The Prime Real Estates">
-    <meta property="og:description" content="Three decades of combined real estate advisory excellence across Delhi NCR and North India.">
+    <meta property="og:description" content="Three decades of combined real estate advisory excellence across Delhi NCR and North India. Meet our senior partners.">
     <meta property="og:image" content="https://theprimerealestates.com/img/advisory-meeting.jpg">
     <meta property="og:url" content="https://theprimerealestates.com/about.html">
     <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About The Firm & Leadership | The Prime Real Estates">
+    <meta name="twitter:description" content="Meet our partners: Virender Singh, Navneet Rana, and Himanshu Malik. Three decades of real estate advisory excellence.">
+    <meta name="twitter:image" content="https://theprimerealestates.com/img/advisory-meeting.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,13 +79,96 @@
         }
     </style>
 
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 & Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-0H2MT335YJ');
+      gtag('config', 'G-0H2MT335YJ', {
+        send_page_view: true
+      });
+
+      // Track phone and WhatsApp conversions
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_phone_call', {
+              event_category: 'conversion',
+              event_label: el.getAttribute('href')
+            });
+          });
+        });
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_whatsapp_chat', {
+              event_category: 'conversion',
+              event_label: 'WhatsApp Click - About Page'
+            });
+          });
+        });
+      });
+    </script>
+
+    <!-- JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theprimerealestates.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About The Firm & Leadership",
+          "item": "https://theprimerealestates.com/about.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: AboutPage with Partners -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "@id": "https://theprimerealestates.com/about.html#webpage",
+      "name": "About The Firm & Leadership | The Prime Real Estates",
+      "mainEntity": {
+        "@type": "RealEstateAgent",
+        "@id": "https://theprimerealestates.com/#organization",
+        "name": "The Prime Real Estates",
+        "foundingDate": "1994",
+        "description": "Independent real estate advisory firm serving expatriates, multinational corporations, and private investors across Delhi NCR.",
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Virender Singh",
+            "jobTitle": "Managing Partner & Founder",
+            "description": "Three decades of strategic real estate advisory across Delhi NCR and North India."
+          }
+        ],
+        "employee": [
+          {
+            "@type": "Person",
+            "name": "Navneet Rana",
+            "jobTitle": "Senior Partner - Healthcare & Institutional Advisory"
+          },
+          {
+            "@type": "Person",
+            "name": "Himanshu Malik",
+            "jobTitle": "Senior Partner & Primary Liaison - Expatriate Leasing & Corporate Relocation",
+            "telephone": "+91-9818926580",
+            "email": "partners@theprimerealestates.com"
+          }
+        ]
+      }
+    }
     </script>
 </head>
 <body class="selection:bg-prime-500 selection:text-white">

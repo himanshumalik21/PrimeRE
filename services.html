@@ -5,8 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advisory Portfolios & Services | The Prime Real Estates</title>
     <meta name="description" content="Explore our client-focused real estate advisory services: Expat residential leasing, corporate housing, commercial office parks, industrial logistics, and joint ventures in Delhi NCR and North India.">
+    <meta name="keywords" content="real estate advisory Delhi NCR, expat relocation services, corporate housing Gurugram, commercial property leasing, land acquisition North India, diplomatic leasing Delhi">
     <link rel="canonical" href="https://theprimerealestates.com/services.html">
     
+    <!-- Geo Meta Tags for Delhi NCR Local SEO -->
+    <meta name="geo.region" content="IN-DL">
+    <meta name="geo.placename" content="New Delhi, Gurugram">
+    <meta name="geo.position" content="28.4595;77.0266">
+    <meta name="ICBM" content="28.4595, 77.0266">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="The Prime Real Estates">
+    <meta property="og:title" content="Advisory Portfolios & Services | The Prime Real Estates">
+    <meta property="og:description" content="Expatriate leasing, corporate relocation, commercial parks, and institutional land advisory across Delhi NCR and North India.">
+    <meta property="og:image" content="https://theprimerealestates.com/img/hero-residence.jpg">
+    <meta property="og:url" content="https://theprimerealestates.com/services.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advisory Portfolios & Services | The Prime Real Estates">
+    <meta name="twitter:description" content="Explore our four client-focused real estate advisory practices across Delhi NCR.">
+    <meta name="twitter:image" content="https://theprimerealestates.com/img/hero-residence.jpg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,13 +79,92 @@
         }
     </style>
 
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 & Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-0H2MT335YJ');
+      gtag('config', 'G-0H2MT335YJ', {
+        send_page_view: true
+      });
+
+      // Track phone and WhatsApp conversions
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_phone_call', {
+              event_category: 'conversion',
+              event_label: el.getAttribute('href')
+            });
+          });
+        });
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_whatsapp_chat', {
+              event_category: 'conversion',
+              event_label: 'WhatsApp Click - Services Page'
+            });
+          });
+        });
+      });
+    </script>
+
+    <!-- JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theprimerealestates.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Advisory Portfolios & Services",
+          "item": "https://theprimerealestates.com/services.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: ItemList of Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "The Prime Real Estates Advisory Practices",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Expatriate & Diplomatic Residential Leasing",
+          "url": "https://theprimerealestates.com/residential-leasing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Corporate Housing & MNC Relocation Advisory",
+          "url": "https://theprimerealestates.com/corporate-housing.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Commercial Office Parks & IT/SEZ Leasing",
+          "url": "https://theprimerealestates.com/commercial-investments.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Industrial Logistics, Healthcare & Joint Ventures",
+          "url": "https://theprimerealestates.com/commercial-investments.html#industrial"
+        }
+      ]
+    }
     </script>
 </head>
 <body class="selection:bg-prime-500 selection:text-white">

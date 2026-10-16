@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commercial, Industrial & Joint Venture Real Estate Advisory | The Prime Real Estates</title>
     <meta name="description" content="Strategic commercial real estate advisory across North India. Specialising in corporate office leasing, Grade-A industrial logistics parks, hospital and healthcare site selection, and developer joint ventures.">
+    <meta name="keywords" content="commercial office leasing Gurgaon, Cyber City office space, industrial land KMP expressway, warehouse land Haryana, hospital land Delhi NCR, joint development agreement JDA real estate, corporate real estate North India">
     <link rel="canonical" href="https://theprimerealestates.com/commercial-investments.html">
     
+    <!-- Geo Meta Tags for Delhi NCR Local SEO -->
+    <meta name="geo.region" content="IN-DL">
+    <meta name="geo.placename" content="Gurugram, New Delhi, Haryana">
+    <meta name="geo.position" content="28.4595;77.0266">
+    <meta name="ICBM" content="28.4595, 77.0266">
+
     <!-- Open Graph -->
+    <meta property="og:site_name" content="The Prime Real Estates">
     <meta property="og:title" content="Commercial, Industrial & Joint Ventures | The Prime Real Estates">
     <meta property="og:description" content="Strategic commercial and industrial real estate advisory and joint venture structuring across North India.">
     <meta property="og:image" content="https://theprimerealestates.com/img/commercial-park.jpg">
     <meta property="og:url" content="https://theprimerealestates.com/commercial-investments.html">
     <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Commercial, Industrial & Joint Ventures | The Prime Real Estates">
+    <meta name="twitter:description" content="Commercial office leasing, industrial logistics parks, hospital sites, and joint development advisory across North India.">
+    <meta name="twitter:image" content="https://theprimerealestates.com/img/commercial-park.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,13 +79,83 @@
         }
     </style>
 
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 & Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-0H2MT335YJ');
+      gtag('config', 'G-0H2MT335YJ', {
+        send_page_view: true
+      });
+
+      // Track phone and WhatsApp conversions
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_phone_call', {
+              event_category: 'conversion',
+              event_label: el.getAttribute('href')
+            });
+          });
+        });
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_whatsapp_chat', {
+              event_category: 'conversion',
+              event_label: 'WhatsApp Click - Commercial Investments'
+            });
+          });
+        });
+      });
+    </script>
+
+    <!-- JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theprimerealestates.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Commercial, Industrial & Joint Ventures",
+          "item": "https://theprimerealestates.com/commercial-investments.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://theprimerealestates.com/commercial-investments.html#service",
+      "name": "Commercial Office, Industrial Logistics & Joint Venture Advisory",
+      "serviceType": "Commercial Real Estate Advisory",
+      "provider": {
+        "@type": "RealEstateAgent",
+        "@id": "https://theprimerealestates.com/#organization",
+        "name": "The Prime Real Estates",
+        "telephone": "+91-9818926580",
+        "email": "partners@theprimerealestates.com"
+      },
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Delhi NCR"},
+        {"@type": "AdministrativeArea", "name": "Gurugram"},
+        {"@type": "AdministrativeArea", "name": "Haryana"},
+        {"@type": "AdministrativeArea", "name": "Rajasthan"},
+        {"@type": "AdministrativeArea", "name": "Punjab"}
+      ],
+      "description": "Institutional commercial office leasing, Grade-A industrial logistics parks, hospital site selections, and developer joint development agreements (JDA) across North India."
+    }
     </script>
 </head>
 <body class="selection:bg-prime-500 selection:text-white">

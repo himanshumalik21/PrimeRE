@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corporate Housing & MNC Relocation Advisory | The Prime Real Estates</title>
     <meta name="description" content="Turn-key corporate housing and employee relocation advisory in Delhi NCR. Serving Japanese, South Korean, Singaporean, European, and American multinationals with executive residential leasing, multi-unit relocations, and tenancy administration.">
+    <meta name="keywords" content="corporate housing Gurgaon, MNC employee relocation Delhi NCR, serviced apartments DLF Cyber City, executive apartments Golf Course Road, Japanese expat housing Gurgaon, corporate lease Delhi, business relocation India">
     <link rel="canonical" href="https://theprimerealestates.com/corporate-housing.html">
     
+    <!-- Geo Meta Tags for Delhi NCR Local SEO -->
+    <meta name="geo.region" content="IN-HR">
+    <meta name="geo.placename" content="Gurugram, New Delhi">
+    <meta name="geo.position" content="28.4595;77.0266">
+    <meta name="ICBM" content="28.4595, 77.0266">
+
     <!-- Open Graph -->
+    <meta property="og:site_name" content="The Prime Real Estates">
     <meta property="og:title" content="Corporate Housing & MNC Relocation Advisory | The Prime Real Estates">
-    <meta property="og:description" content="End-to-end executive relocation and corporate residential leasing solutions in Delhi NCR.">
-    <meta property="og:image" content="https://theprimerealestates.com/img/corporate-relocation.jpg">
+    <meta property="og:description" content="End-to-end executive relocation and corporate residential leasing solutions in Delhi NCR. Handled with institutional diligence.">
+    <meta property="og:image" content="https://theprimerealestates.com/img/6.png">
     <meta property="og:url" content="https://theprimerealestates.com/corporate-housing.html">
     <meta property="og:type" content="article">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Corporate Housing & MNC Relocation Advisory | The Prime Real Estates">
+    <meta name="twitter:description" content="End-to-end executive corporate housing and relocation advisory in Delhi NCR. Led by Himanshu Malik.">
+    <meta name="twitter:image" content="https://theprimerealestates.com/img/6.png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,30 +79,123 @@
         }
     </style>
 
-    <!-- Google Analytics 4 -->
+    <!-- Google Analytics 4 & Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-0H2MT335YJ');
+      gtag('config', 'G-0H2MT335YJ', {
+        send_page_view: true
+      });
+
+      // Track phone and WhatsApp conversions
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_phone_call', {
+              event_category: 'conversion',
+              event_label: el.getAttribute('href')
+            });
+          });
+        });
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            gtag('event', 'contact_whatsapp_chat', {
+              event_category: 'conversion',
+              event_label: 'WhatsApp Click - Corporate Housing'
+            });
+          });
+        });
+      });
     </script>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://theprimerealestates.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Corporate Housing & MNC Relocation",
+          "item": "https://theprimerealestates.com/corporate-housing.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: Service with Himanshu Malik as Lead Liaison -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Corporate Housing & Executive Relocation Advisory",
+      "@id": "https://theprimerealestates.com/corporate-housing.html#service",
+      "name": "Corporate Housing & MNC Relocation Advisory",
+      "serviceType": "Corporate Real Estate Relocation",
       "provider": {
         "@type": "RealEstateAgent",
+        "@id": "https://theprimerealestates.com/#organization",
         "name": "The Prime Real Estates",
         "telephone": "+91-9818926580",
         "email": "partners@theprimerealestates.com"
       },
-      "serviceType": "Corporate Housing",
-      "areaServed": ["Gurugram", "New Delhi", "Delhi NCR"],
-      "description": "Comprehensive corporate housing programs, master leases, and employee relocation advisory for international businesses in India."
+      "broker": {
+        "@type": "Person",
+        "name": "Himanshu Malik",
+        "jobTitle": "Senior Partner & Primary Liaison - Corporate Relocation & Expatriate Housing",
+        "telephone": "+91-9818926580",
+        "email": "partners@theprimerealestates.com"
+      },
+      "areaServed": [
+        {"@type": "AdministrativeArea", "name": "Gurugram"},
+        {"@type": "AdministrativeArea", "name": "DLF Cyber City"},
+        {"@type": "AdministrativeArea", "name": "Golf Course Road"},
+        {"@type": "AdministrativeArea", "name": "New Delhi"},
+        {"@type": "AdministrativeArea", "name": "Delhi NCR"}
+      ],
+      "description": "Turn-key corporate housing programs, batch relocations, executive serviced suites, and tenancy administration for multinational corporations in Delhi NCR."
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What corporate housing solutions does Prime RE provide for MNCs in Gurugram and Delhi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Prime Real Estates provides turn-key serviced suites, bespoke master lease structuring, multi-unit executive housing batches, and full lease administration for expatriate and C-suite relocation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Prime RE manage batch relocations for incoming foreign executive teams?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We regularly handle simultaneous onboarding and batch housing for 5 to 50+ expatriate specialists and leadership teams from Japan, South Korea, Europe, and the United States, coordinating synchronized handovers and community orientation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Prime RE handle corporate compliance and GST billing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All corporate lease contracts are reviewed against institutional standards, featuring compliant GST invoicing, corporate indemnification clauses, clear security deposit escrow terms, and landlord KYC verification."
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -560,6 +667,13 @@
             .then(async (response) => {
                 let json = await response.json();
                 if (response.status == 200) {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'generate_lead', {
+                            event_category: 'form',
+                            event_label: 'Corporate Housing RFP',
+                            value: 1
+                        });
+                    }
                     result.classList.remove('hidden', 'bg-rose-900/50', 'text-rose-200');
                     result.classList.add('bg-emerald-900/50', 'text-emerald-200');
                     result.innerHTML = "Thank you. Your corporate brief has been received. Our senior mobility team will contact you today.";
