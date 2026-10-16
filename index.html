@@ -3,13 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Real Estates | Residential, Commercial, Industrial & Institutional Property Advisory Pan-India</title>
-    <meta name="description" content="Prime Real Estates, headquartered in Gurugram, offers comprehensive property sales, leasing, and land acquisition across residential, commercial, industrial, agricultural, institutional, hospitals, and corporate parks pan-India.">
+    <title>The Prime Real Estates | Real Estate. Thoughtfully Advised. | Delhi NCR</title>
+    <meta name="description" content="Independent, client-focused real estate advisory serving expatriates, multinational corporations, and discerning property buyers across Delhi NCR. Specialising in diplomatic residences, executive leasing, and strategic commercial advisory.">
     <link rel="canonical" href="https://theprimerealestates.com/">
     
-    <!-- Tailwind CSS CDN -->
+    <!-- Open Graph & Social -->
+    <meta property="og:title" content="The Prime Real Estates | Real Estate. Thoughtfully Advised.">
+    <meta property="og:description" content="Bespoke residential leasing, corporate housing, and real estate advisory for expatriates and international businesses in Delhi NCR.">
+    <meta property="og:image" content="https://theprimerealestates.com/img/hero-residence.jpg">
+    <meta property="og:url" content="https://theprimerealestates.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN with configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                    colors: {
+                        prime: {
+                            50: '#FAF8F5',
+                            100: '#F4EFE6',
+                            200: '#E7DCcb',
+                            300: '#D5C2A5',
+                            400: '#BAA079',
+                            500: '#9E825A', // Primary Bronze
+                            600: '#866B46',
+                            700: '#6C5435',
+                            800: '#4F3D26',
+                            900: '#2F2416',
+                        },
+                        onyx: {
+                            800: '#1A1C20',
+                            900: '#121417', // Midnight Charcoal
+                            950: '#0B0C0E',
+                        },
+                        alabaster: '#FAFAF7',
+                    }
+                }
+            }
+        }
+    </script>
     
+    <style>
+        body {
+            font-family: '"Plus Jakarta Sans"', sans-serif;
+            background-color: #FAFAF7;
+            color: #1A1C20;
+        }
+        h1, h2, h3, .font-editorial {
+            font-family: '"Playfair Display"', Georgia, serif;
+        }
+    </style>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
@@ -24,255 +79,506 @@
     {
       "@context": "https://schema.org",
       "@type": "RealEstateAgent",
-      "name": "Prime Real Estates",
+      "name": "The Prime Real Estates",
       "url": "https://theprimerealestates.com/",
-      "logo": "https://theprimerealestates.com/img/logo.webp",
-      "image": "https://theprimerealestates.com/img/hero.webp",
-      "description": "Comprehensive real estate advisory specializing in residential, commercial, industrial, agricultural, institutional, hospital, and corporate park properties pan-India.",
+      "logo": "https://theprimerealestates.com/img/hero-residence.jpg",
+      "image": "https://theprimerealestates.com/img/hero-residence.jpg",
+      "description": "Client-focused real estate advisory serving expatriates, international businesses, and discerning property buyers across Delhi NCR.",
       "telephone": "+91-9818926580",
       "email": "partners@theprimerealestates.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "B-721, Sushant Lok Phase I, Sector 43",
-        "addressLocality": "Gurugram",
-        "addressRegion": "Haryana",
-        "postalCode": "122009",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.4595",
-        "longitude": "77.0266"
-      },
-      "areaServed": [
-        "Delhi", "Delhi NCR", "Haryana", "Punjab", "Rajasthan", "Himachal Pradesh", "Uttarakhand", "Uttar Pradesh", "Gujarat", "Madhya Pradesh"
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "B-721, Sushant Lok Phase I, Sector 43",
+          "addressLocality": "Gurugram",
+          "addressRegion": "Haryana",
+          "postalCode": "122009",
+          "addressCountry": "IN"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Diplomatic Enclave, Chanakyapuri",
+          "addressLocality": "New Delhi",
+          "addressRegion": "Delhi",
+          "postalCode": "110021",
+          "addressCountry": "IN"
+        }
       ],
-      "knowsAbout": [
-        "Residential Real Estate",
-        "Commercial Properties",
-        "Industrial Land & Warehousing",
-        "Agricultural Land",
-        "Institutional & Hospital Real Estate",
-        "Corporate Parks"
-      ]
+      "areaServed": ["Delhi NCR", "New Delhi", "Gurugram", "North India"]
     }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="selection:bg-prime-500 selection:text-white">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <span class="text-2xl font-black tracking-tight text-slate-900">PRIME <span class="text-blue-600">REAL ESTATES</span></span>
+    <!-- Top Announcement & Contact Bar -->
+    <div class="bg-onyx-900 text-stone-300 text-xs py-2 px-4 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 text-prime-400 font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-prime-400"></span>
+                    Expat & Corporate Relocation Advisory
+                </span>
+                <span class="hidden md:inline text-stone-500">|</span>
+                <span class="hidden md:inline text-stone-400">Chanakyapuri, New Delhi &bull; Sushant Lok, Gurugram</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+919818926580" class="hover:text-prime-300 transition flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-prime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    +91 9818926580
+                </a>
+                <a href="mailto:partners@theprimerealestates.com" class="hover:text-prime-300 transition hidden sm:flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-prime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    partners@theprimerealestates.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-stone-200/80 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col group">
+                <span class="font-editorial text-2xl sm:text-3xl tracking-tight text-onyx-900 font-semibold group-hover:text-prime-600 transition">
+                    THE PRIME
+                </span>
+                <span class="text-[10px] tracking-[0.25em] uppercase text-stone-500 font-medium -mt-1">
+                    Real Estates &bull; Advisory
+                </span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <a href="index.html" class="text-blue-600 font-semibold">Home</a>
-                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
-                <a href="services.html" class="hover:text-blue-600 transition">Portfolios</a>
-                <a href="contact.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg shadow-sm hover:bg-blue-700 transition">Contact Us</a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
+                <a href="index.html" class="text-prime-600 font-semibold border-b-2 border-prime-500 pb-1">Home</a>
+                <a href="residential-leasing.html" class="hover:text-prime-600 transition pb-1">Expat Residential</a>
+                <a href="corporate-housing.html" class="hover:text-prime-600 transition pb-1">Corporate Relocation</a>
+                <a href="commercial-investments.html" class="hover:text-prime-600 transition pb-1">Commercial & JVs</a>
+                <a href="about.html" class="hover:text-prime-600 transition pb-1">The Firm</a>
+                <a href="contact.html" class="hover:text-prime-600 transition pb-1">Contact</a>
             </nav>
+
+            <!-- Action CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="contact.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-stone-800 text-stone-900 text-xs font-semibold tracking-wider uppercase hover:bg-stone-900 hover:text-white transition duration-200">
+                    Private Enquiry
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden p-2 text-stone-700 hover:text-onyx-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#FAFAF7] border-b border-stone-200 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-base font-semibold text-prime-600">Home</a>
+            <a href="residential-leasing.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Expat Residential Leasing</a>
+            <a href="corporate-housing.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Corporate Relocation & Housing</a>
+            <a href="commercial-investments.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Commercial, Industrial & JVs</a>
+            <a href="about.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">About The Firm</a>
+            <a href="contact.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Private Enquiries</a>
+            <div class="pt-4 border-t border-stone-200">
+                <a href="tel:+919818926580" class="block text-sm text-stone-600 mb-2">Direct: +91 9818926580</a>
+                <a href="contact.html" class="block text-center w-full py-3 bg-onyx-900 text-white rounded-lg text-sm font-semibold uppercase tracking-wider">Submit Requirement</a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-slate-900 text-white py-24 lg:py-32 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-block bg-blue-500/10 text-blue-400 font-semibold px-4 py-1.5 rounded-full text-sm mb-6 border border-blue-500/20">Pan-India Multi-Sector Property Advisory</span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                    Mastering Property Sales, Acquisitions & <span class="text-blue-500">Real Estate Expansion</span>.
+    <section class="relative min-h-[85vh] lg:min-h-[90vh] flex items-center bg-onyx-900 text-white overflow-hidden">
+        <!-- Background Imagery with Dark Vignette Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="img/hero-residence.jpg" alt="Luxury Delhi NCR Architecture" class="w-full h-full object-cover object-center scale-105 transition duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-r from-onyx-950/95 via-onyx-950/80 to-onyx-950/40"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 lg:py-32">
+            <div class="max-w-2xl lg:max-w-3xl">
+                <!-- Eyebrow Pill -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-prime-500/15 border border-prime-400/30 text-prime-300 text-xs font-medium tracking-wider uppercase mb-8 backdrop-blur-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-prime-400"></span>
+                    Independent Advisory &bull; Expatriates &bull; Corporates &bull; Investors
+                </div>
+
+                <!-- Main Tagline Headline -->
+                <h1 class="font-editorial text-4xl sm:text-5xl lg:text-7xl font-normal leading-[1.1] tracking-tight mb-8 text-stone-100">
+                    Real Estate.<br>
+                    <span class="italic font-normal text-prime-400">Thoughtfully Advised.</span>
                 </h1>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                    Headquartered in Gurugram, we deliver trusted advisory and execution across residential, commercial, industrial, agricultural, institutional, hospital assets, and corporate parks.
+
+                <!-- Supporting Prose -->
+                <p class="text-base sm:text-lg lg:text-xl text-stone-300 font-light leading-relaxed mb-10 max-w-xl">
+                    From securing exceptional diplomatic residences in Delhi NCR to coordinating multinational corporate relocations and strategic acquisitions across North India, The Prime Real Estates delivers discreet, client-first counsel.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="contact.html" class="bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:bg-blue-500 transition text-center">Connect With Partners</a>
-                    <a href="services.html" class="bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-8 py-4 rounded-xl hover:bg-slate-700 transition text-center">Explore Asset Portfolios</a>
+
+                <!-- Dual Action CTAs -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="residential-leasing.html" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-prime-500 text-white font-medium text-sm tracking-wide shadow-lg hover:bg-prime-400 transition duration-200">
+                        Find a Residence
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a href="corporate-housing.html" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white/10 hover:bg-white/15 text-white border border-white/20 backdrop-blur-sm font-medium text-sm tracking-wide transition duration-200">
+                        Corporate Relocation Solutions
+                    </a>
                 </div>
-            </div>
-            <div class="bg-slate-800/50 border border-slate-700/60 p-8 rounded-2xl backdrop-blur-sm">
-                <h3 class="text-xl font-bold mb-2 text-white">Three Decades of Trust</h3>
-                <p class="text-slate-400 text-sm mb-6">Led by Virender Singh, Navneet Rana, and Himanshu Malik with decades of combined execution excellence.</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 text-center">
-                        <div class="text-2xl font-bold text-blue-400">10 States</div>
-                        <div class="text-xs text-slate-400 mt-1">Strategic Regional Reach</div>
+
+                <!-- Trust Badges -->
+                <div class="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-6">
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-editorial font-medium text-prime-300">30+ Years</span>
+                        <span class="text-xs text-stone-400 uppercase tracking-wider">Combined Local Expertise</span>
                     </div>
-                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700 text-center">
-                        <div class="text-2xl font-bold text-blue-400">7 Verticals</div>
-                        <div class="text-xs text-slate-400 mt-1">Full-Spectrum Asset Classes</div>
+                    <div>
+                        <span class="block text-xl sm:text-2xl font-editorial font-medium text-prime-300">Diplomatic & MNC</span>
+                        <span class="text-xs text-stone-400 uppercase tracking-wider">Trusted Relocation Partner</span>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <span class="block text-xl sm:text-2xl font-editorial font-medium text-prime-300">100% Client-First</span>
+                        <span class="text-xs text-stone-400 uppercase tracking-wider">Discreet & Independent</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Clientele & Brand Showcase Section -->
-    <section class="py-20 bg-white border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-blue-600 font-semibold tracking-wider text-sm uppercase">Our Trusted Partnerships</span>
-            <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-4">Powering Growth for Corporate & Institutional Leaders</h2>
-            <p class="text-slate-600 max-w-2xl mx-auto mb-12">We manage large-scale real estate transactions, corporate park placements, and institutional site selections across India.</p>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                <!-- Cloudnine -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/DLF.png" alt="DLF Limited: The pioneer of Gurgaon's luxury real estate, famous for landmark properties like DLF The Camellias (Sector 42), The Crest (DLF Phase 5), and commercial hubs like DLF Cyber City." class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Rainbow Hospitals -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/Emaar.png" alt="Celebrated for premium townships and family-centric residences, with developments including Emaar Digihomes (Sector 62) and Emaar Urban Oasis (Sector 62)" class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Asian Hospital -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/M3M.png" alt="Renowned for fast-paced execution of ultra-luxury high-rises and retail avenues, featuring projects like M3M Golfestate (Sector 65) and M3M Mansion (Sector 113)" class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Motherhood Hospital -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/Bestech.png" alt="Bestech Group is the top Real Estate development company in Gurgaon. Find the best residential and commercial property for sale in Gurgaon." class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- DCGpac -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/dcgpac.webp" alt="DCGpac" class="max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- BlueDart -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/bluedart.webp" alt="BlueDart" class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Blinkit -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/sobha.png" alt="SOBHA Limited | Luxury Real Estate Company in India" class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Zepto -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/MetCity.webp" alt="Reliance MET City is a massive 8,250-acre integrated smart city project located in the Jhajjar district of Haryana near Gurugram and Delhi" class="max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Delhivery -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/cloudnine.png" alt="Cloudnine Hospital is the top maternity hospital in New Delhi, offering expert care for normal delivery, C-sections, and complete pregnancy services." class="max-h-20 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Ekart Logistics -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/ekart.webp" alt="Ekart Logistics" class="max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- Fresh to Home -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/freshtohome.webp" alt="Fresh to Home" class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-                <!-- TVS Supply Chain Solutions -->
-                <div class="bg-slate-50 border border-slate-200 h-28 rounded-xl flex items-center justify-center p-4 hover:border-blue-500 transition group">
-                    <img src="img/tvs.webp" alt="TVS Supply Chain Solutions" class="max-w-full object-contain filter grayscale group-hover:grayscale-0 transition">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Asset Portfolios Section -->
-    <section class="py-20 bg-slate-50">
+    <!-- Strategic Audience Pillars -->
+    <section class="py-24 bg-[#FAF8F5] border-b border-stone-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl mb-4">Comprehensive Property Portfolios</h2>
-                <p class="text-slate-600 text-lg">Specialized purchase, sale, and leasing advisory across all major real estate asset classes.</p>
+            <div class="max-w-3xl mb-16">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-3">Our Core Advisory Divisions</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl text-onyx-900 font-normal leading-tight">
+                    Tailored real estate counsel for discerning international clients.
+                </h2>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-6">🏡</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-900">Residential Properties</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Luxury builder floors, independent plots, gated communities, and high-end residential sales and acquisitions.</p>
-                    <a href="services.html" class="text-blue-600 font-semibold hover:underline flex items-center gap-1">Explore portfolios &rarr;</a>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Pillar 1: Expatriate Residential Leasing -->
+                <div class="bg-white p-8 sm:p-10 rounded-2xl border border-stone-200/80 hover:border-prime-400 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-prime-50 text-prime-600 flex items-center justify-center mb-6 group-hover:bg-prime-500 group-hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                        </div>
+                        <h3 class="font-editorial text-2xl text-onyx-900 font-medium mb-3">Expat Residential Leasing</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6 font-light">
+                            Dedicated assistance for foreign diplomats, multinational executives, and relocating families. We curate premium bungalows, penthouses, and gated compounds with rigorous security and clear tenancy agreements.
+                        </p>
+                        <ul class="text-xs text-stone-500 space-y-2 mb-8">
+                            <li class="flex items-center gap-2">&bull; Chanakyapuri, Vasant Vihar, Jor Bagh & Golf Links</li>
+                            <li class="flex items-center gap-2">&bull; Sushant Lok, Golf Course Rd & DLF Phases I–V</li>
+                            <li class="flex items-center gap-2">&bull; Diplomatic clauses & international lease vetting</li>
+                        </ul>
+                    </div>
+                    <a href="residential-leasing.html" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-prime-600 group-hover:text-prime-700">
+                        Explore Residential Advisory &rarr;
+                    </a>
                 </div>
-                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-6">🏢</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-900">Commercial & Corporate Parks</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Prime office spaces, retail complexes, IT hubs, and expansive corporate parks designed for modern enterprises.</p>
-                    <a href="services.html" class="text-blue-600 font-semibold hover:underline flex items-center gap-1">Explore portfolios &rarr;</a>
+
+                <!-- Pillar 2: Corporate Housing & Relocation -->
+                <div class="bg-white p-8 sm:p-10 rounded-2xl border border-stone-200/80 hover:border-prime-400 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-prime-50 text-prime-600 flex items-center justify-center mb-6 group-hover:bg-prime-500 group-hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h3 class="font-editorial text-2xl text-onyx-900 font-medium mb-3">Corporate Relocation & Housing</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6 font-light">
+                            Serving Japanese, South Korean, Singaporean, European, and American enterprises establishing or expanding in North India. Single-point coordination for multi-executive mobility and serviced housing.
+                        </p>
+                        <ul class="text-xs text-stone-500 space-y-2 mb-8">
+                            <li class="flex items-center gap-2">&bull; Corporate leases & master tenancy frameworks</li>
+                            <li class="flex items-center gap-2">&bull; Proximity to international schools & business hubs</li>
+                            <li class="flex items-center gap-2">&bull; Tailored handover inspections & ongoing tenancy liaison</li>
+                        </ul>
+                    </div>
+                    <a href="corporate-housing.html" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-prime-600 group-hover:text-prime-700">
+                        Corporate Solutions &rarr;
+                    </a>
                 </div>
-                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-6">🏭</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-900">Industrial & Warehousing</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Heavy industrial land parcels, manufacturing plants, fulfillment centers, and large-scale logistics warehousing.</p>
-                    <a href="services.html" class="text-blue-600 font-semibold hover:underline flex items-center gap-1">Explore portfolios &rarr;</a>
-                </div>
-                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-6">🏥</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-900">Hospitals & Healthcare</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Specialized site selection, compliance-ready buildings, and leasing for multi-specialty medical institutions.</p>
-                    <a href="services.html" class="text-blue-600 font-semibold hover:underline flex items-center gap-1">Explore portfolios &rarr;</a>
-                </div>
-                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-6">🏛️</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-900">Institutional Real Estate</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Campus spaces for educational institutions, research centers, and government or public sector land acquisitions.</p>
-                    <a href="services.html" class="text-blue-600 font-semibold hover:underline flex items-center gap-1">Explore portfolios &rarr;</a>
-                </div>
-                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xl mb-6">🌾</div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-900">Agricultural Land</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Verified agricultural acreage, farmhouses, and rural investment land parcels with clean titles.</p>
-                    <a href="services.html" class="text-blue-600 font-semibold hover:underline flex items-center gap-1">Explore portfolios &rarr;</a>
+
+                <!-- Pillar 3: Commercial & Joint Ventures -->
+                <div class="bg-white p-8 sm:p-10 rounded-2xl border border-stone-200/80 hover:border-prime-400 transition-all duration-300 hover:shadow-xl group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-prime-50 text-prime-600 flex items-center justify-center mb-6 group-hover:bg-prime-500 group-hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        </div>
+                        <h3 class="font-editorial text-2xl text-onyx-900 font-medium mb-3">Commercial & Joint Ventures</h3>
+                        <p class="text-stone-600 text-sm leading-relaxed mb-6 font-light">
+                            Private deal structuring, corporate office parks, industrial warehousing hubs, institutional land monetization, and healthcare real estate acquisitions across Haryana, Rajasthan, and Punjab.
+                        </p>
+                        <ul class="text-xs text-stone-500 space-y-2 mb-8">
+                            <li class="flex items-center gap-2">&bull; Strategic land parcels & industrial parks</li>
+                            <li class="flex items-center gap-2">&bull; Healthcare & hospital site acquisitions</li>
+                            <li class="flex items-center gap-2">&bull; Discreet developer & institutional joint ventures</li>
+                        </ul>
+                    </div>
+                    <a href="commercial-investments.html" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-prime-600 group-hover:text-prime-700">
+                        Commercial Advisory &rarr;
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Geographic Reach -->
-    <section class="py-20 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-slate-900 mb-4">Pan-India Operational Footprint</h2>
-            <p class="text-slate-600 max-w-2xl mx-auto mb-10">Headquartered in Gurugram, offering deep localized market expertise across 10 key states.</p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Delhi</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Delhi NCR</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Haryana</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Punjab</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Rajasthan</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Himachal Pradesh</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Uttarakhand</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Uttar Pradesh</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Gujarat</span>
-                <span class="bg-slate-100 border border-slate-200 px-5 py-2.5 rounded-full font-medium text-slate-700">Madhya Pradesh</span>
+    <!-- Location Spotlight: Prime Delhi NCR Hubs -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-2">Prime Geographic Focus</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl text-onyx-900 font-normal">
+                        Where we advise.
+                    </h2>
+                </div>
+                <p class="text-stone-500 text-sm max-w-md mt-4 md:mt-0 font-light">
+                    Direct local advisory presence in South Delhi's diplomatic quarters and Gurugram's premier business and residential corridors.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Location 1: Chanakyapuri -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-onyx-900 flex flex-col justify-end p-6 text-white shadow-md">
+                    <img src="img/chanakyapuri-estate.jpg" alt="Chanakyapuri Diplomatic Residences" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] uppercase tracking-widest text-prime-300 font-semibold mb-1 block">New Delhi</span>
+                        <h4 class="font-editorial text-2xl mb-2">Chanakyapuri</h4>
+                        <p class="text-xs text-stone-300 leading-relaxed font-light mb-4">
+                            Diplomatic enclave, embassy residences, sprawling independent estates, and serene, high-security surroundings.
+                        </p>
+                        <a href="residential-leasing.html#chanakyapuri" class="text-xs font-medium text-prime-300 group-hover:underline flex items-center gap-1">
+                            Explore Area &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location 2: Vasant Vihar & South Delhi -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-onyx-900 flex flex-col justify-end p-6 text-white shadow-md">
+                    <img src="img/luxury-apartment.jpg" alt="Vasant Vihar & South Delhi Luxury Apartments" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] uppercase tracking-widest text-prime-300 font-semibold mb-1 block">South Delhi</span>
+                        <h4 class="font-editorial text-2xl mb-2">Vasant Vihar & Jor Bagh</h4>
+                        <p class="text-xs text-stone-300 leading-relaxed font-light mb-4">
+                            Premier residential avenues favoured by senior diplomats, multinational leadership, and cultural institutions.
+                        </p>
+                        <a href="residential-leasing.html#vasantvihar" class="text-xs font-medium text-prime-300 group-hover:underline flex items-center gap-1">
+                            Explore Area &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location 3: Sushant Lok & DLF Phases -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-onyx-900 flex flex-col justify-end p-6 text-white shadow-md">
+                    <img src="img/executive-interior.jpg" alt="Sushant Lok & DLF Executive Living" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] uppercase tracking-widest text-prime-300 font-semibold mb-1 block">Gurugram</span>
+                        <h4 class="font-editorial text-2xl mb-2">Sushant Lok & DLF</h4>
+                        <p class="text-xs text-stone-300 leading-relaxed font-light mb-4">
+                            Established low-density residential sectors with immediate access to premier healthcare, metro, and corporate towers.
+                        </p>
+                        <a href="residential-leasing.html#sushantlok" class="text-xs font-medium text-prime-300 group-hover:underline flex items-center gap-1">
+                            Explore Area &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location 4: Golf Course Road Corridor -->
+                <div class="group relative rounded-2xl overflow-hidden aspect-[4/5] bg-onyx-900 flex flex-col justify-end p-6 text-white shadow-md">
+                    <img src="img/gurgaon-skyline.jpg" alt="Golf Course Road Modern Skyline" class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-onyx-950 via-onyx-950/40 to-transparent"></div>
+                    <div class="relative z-10">
+                        <span class="text-[10px] uppercase tracking-widest text-prime-300 font-semibold mb-1 block">Gurugram</span>
+                        <h4 class="font-editorial text-2xl mb-2">Golf Course Corridor</h4>
+                        <p class="text-xs text-stone-300 leading-relaxed font-light mb-4">
+                            India's foremost luxury condominium corridor (The Camellias, Magnolias, Aralias) for global expatriates and corporate HQs.
+                        </p>
+                        <a href="residential-leasing.html#golfcourse" class="text-xs font-medium text-prime-300 group-hover:underline flex items-center gap-1">
+                            Explore Area &rarr;
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-                <span class="text-white font-black text-xl tracking-tight block mb-4">PRIME REAL ESTATES</span>
-                <p class="text-sm">Comprehensive real estate sales, leasing, and advisory across residential, commercial, industrial, agricultural, institutional, hospitals, and corporate parks.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="services.html" class="hover:text-white transition">Portfolios</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Asset Portfolios</h4>
-                <ul class="space-y-2 text-sm">
-                    <li>Residential & Commercial</li>
-                    <li>Industrial & Warehousing</li>
-                    <li>Hospitals & Institutional</li>
-                    <li>Agricultural Land & Corporate Parks</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Headquarters</h4>
-                <p class="text-sm mb-1">B-721, Sushant Lok Phase I</p>
-                <p class="text-sm mb-1">Sector 43, Gurugram, Haryana 122009</p>
-                <p class="text-sm mb-1">Phone: +91 9818926580</p>
-                <p class="text-sm">Email: partners@theprimerealestates.com</p>
+    <!-- Advisory Philosophy & Service Experience -->
+    <section class="py-24 bg-onyx-900 text-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-400 block mb-3">Our Differentiation</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight mb-8">
+                        Why international clients work with an adviser, not a listing broker.
+                    </h2>
+                    <p class="text-stone-300 text-base leading-relaxed mb-6 font-light">
+                        Navigating Indian property transactions can be opaque. Typical intermediaries represent inventory; The Prime Real Estates represents the client's interests.
+                    </p>
+                    <p class="text-stone-400 text-sm leading-relaxed mb-10 font-light">
+                        From understanding cultural and security nuances for international expatriates to conducting exhaustive title checks, we ensure that every property shortlist meets the rigorous benchmarks expected by multinational companies and private investors.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-prime-500/20 text-prime-400 flex items-center justify-center font-editorial font-bold text-sm shrink-0">1</div>
+                            <div>
+                                <h4 class="font-semibold text-stone-100 text-base mb-1">In-Depth Briefing & Cultural Context</h4>
+                                <p class="text-xs text-stone-400 leading-relaxed">Detailed discovery of family, security, schooling, commute, and diplomatic requirements before shortlisting.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-prime-500/20 text-prime-400 flex items-center justify-center font-editorial font-bold text-sm shrink-0">2</div>
+                            <div>
+                                <h4 class="font-semibold text-stone-100 text-base mb-1">Pre-Screened & Legally Verified Options</h4>
+                                <p class="text-xs text-stone-400 leading-relaxed">Every property undergoes physical inspection, landlord reputation vetting, and title verification.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-prime-500/20 text-prime-400 flex items-center justify-center font-editorial font-bold text-sm shrink-0">3</div>
+                            <div>
+                                <h4 class="font-semibold text-stone-100 text-base mb-1">Equitable Lease Negotiations & Turn-Key Handover</h4>
+                                <p class="text-xs text-stone-400 leading-relaxed">International lease standardisation, diplomatic break clauses, utility transitions, and ongoing tenancy liaison.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                        <img src="img/advisory-meeting.jpg" alt="The Prime Real Estates Consultation" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 bg-prime-600 text-white p-6 sm:p-8 rounded-2xl shadow-xl max-w-xs hidden sm:block">
+                        <span class="block text-2xl font-editorial mb-1">Discretion & Care</span>
+                        <p class="text-xs text-stone-200 leading-relaxed font-light">
+                            Confidential advisory for foreign missions, multinational corporations, and family offices.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 text-center text-xs">
-            &copy; 2026 Prime Real Estates. All rights reserved.
+    </section>
+
+    <!-- Direct Enquiry CTA Section -->
+    <section class="py-24 bg-[#FAF8F5]">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-14 border border-stone-200/80 shadow-lg text-center">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-3">Begin a Conversation</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl text-onyx-900 font-normal mb-4">
+                    Discuss your requirement with a senior partner.
+                </h2>
+                <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto mb-8 font-light">
+                    Whether you are relocating an international executive team, seeking a diplomatic home, or exploring strategic acquisitions in North India, our partners are at your service.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="contact.html" class="w-full sm:w-auto px-8 py-4 rounded-full bg-onyx-900 text-white font-medium text-sm tracking-wide hover:bg-stone-800 transition shadow">
+                        Submit Private Enquiry
+                    </a>
+                    <a href="https://wa.me/919818926580?text=Hello%20The%20Prime%20Real%20Estates,%20I%20would%20like%20to%20discuss%20a%20property%20requirement." target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-full border border-stone-300 text-stone-800 font-medium text-sm hover:border-onyx-900 hover:bg-stone-50 transition flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        WhatsApp Direct
+                    </a>
+                </div>
+
+                <div class="mt-8 text-xs text-stone-500">
+                    Direct Line: <a href="tel:+919818926580" class="text-onyx-900 font-semibold underline">+91 9818926580</a> &bull; Email: <a href="mailto:partners@theprimerealestates.com" class="text-onyx-900 font-semibold underline">partners@theprimerealestates.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Refined Footer -->
+    <footer class="bg-onyx-950 text-stone-400 py-16 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2">
+                    <span class="font-editorial text-2xl text-stone-100 font-semibold tracking-tight block mb-2">
+                        THE PRIME REAL ESTATES
+                    </span>
+                    <p class="text-xs uppercase tracking-[0.2em] text-prime-400 font-medium mb-6">
+                        Real Estate. Thoughtfully Advised.
+                    </p>
+                    <p class="text-xs text-stone-400 leading-relaxed max-w-sm font-light mb-6">
+                        An independent real estate advisory serving expatriates, diplomatic staff, multinational corporations, and discerning investors across Delhi NCR and North India.
+                    </p>
+                    <div class="text-xs text-stone-400 space-y-1">
+                        <div><strong class="text-stone-300">New Delhi:</strong> Diplomatic Enclave, Chanakyapuri</div>
+                        <div><strong class="text-stone-300">Gurugram:</strong> B-721, Sushant Lok Phase I, Sector 43</div>
+                    </div>
+                </div>
+
+                <!-- Navigation Column 1 -->
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Advisory Services</h5>
+                    <ul class="text-xs space-y-2.5">
+                        <li><a href="residential-leasing.html" class="hover:text-prime-300 transition">Expat Residential Leasing</a></li>
+                        <li><a href="corporate-housing.html" class="hover:text-prime-300 transition">Corporate Relocations</a></li>
+                        <li><a href="residential-leasing.html#diplomatic" class="hover:text-prime-300 transition">Diplomatic Housing</a></li>
+                        <li><a href="commercial-investments.html" class="hover:text-prime-300 transition">Commercial & Office Parks</a></li>
+                        <li><a href="commercial-investments.html#industrial" class="hover:text-prime-300 transition">Industrial & Warehousing</a></li>
+                        <li><a href="commercial-investments.html#jv" class="hover:text-prime-300 transition">Joint Ventures & Land</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Column 2 -->
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Prime Locations</h5>
+                    <ul class="text-xs space-y-2.5">
+                        <li><a href="residential-leasing.html#chanakyapuri" class="hover:text-prime-300 transition">Chanakyapuri, New Delhi</a></li>
+                        <li><a href="residential-leasing.html#vasantvihar" class="hover:text-prime-300 transition">Vasant Vihar & Jor Bagh</a></li>
+                        <li><a href="residential-leasing.html#sushantlok" class="hover:text-prime-300 transition">Sushant Lok I & DLF</a></li>
+                        <li><a href="residential-leasing.html#golfcourse" class="hover:text-prime-300 transition">Golf Course Road Corridor</a></li>
+                        <li><a href="commercial-investments.html#northindia" class="hover:text-prime-300 transition">North India Strategic Nodes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navigation Column 3 -->
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Direct Contact</h5>
+                    <ul class="text-xs space-y-2.5">
+                        <li class="text-stone-300 font-medium"><a href="tel:+919818926580" class="hover:text-prime-300">+91 9818926580</a></li>
+                        <li><a href="mailto:partners@theprimerealestates.com" class="hover:text-prime-300">partners@theprimerealestates.com</a></li>
+                        <li><a href="about.html" class="hover:text-prime-300 transition">Leadership Team</a></li>
+                        <li><a href="contact.html" class="hover:text-prime-300 transition">Private Client Enquiry</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500 gap-4">
+                <div>
+                    &copy; <span id="currentYear"></span> The Prime Real Estates. All rights reserved.
+                </div>
+                <div class="flex gap-6">
+                    <span>Privacy Policy</span>
+                    <span>Terms of Advisory</span>
+                    <span>RERA & Compliance</span>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919818926580?text=Hello%20The%20Prime%20Real%20Estates,%20I%20would%20like%20to%20enquire%20about%20residential%20leasing%20/%20corporate%20housing." 
+       target="_blank" 
+       rel="noopener"
+       aria-label="Chat on WhatsApp" 
+       class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl transition duration-300 hover:scale-110 flex items-center justify-center">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </a>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

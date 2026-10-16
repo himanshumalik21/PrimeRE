@@ -3,13 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Prime Real Estates - Leadership & Trust</title>
-    <meta name="description" content="Meet the leadership team of Prime Real Estates: Virender Singh, Navneet Rana, and Himanshu Malik. Delivering trusted property advisory across India since inception.">
+    <title>About The Firm & Leadership | The Prime Real Estates</title>
+    <meta name="description" content="Discover The Prime Real Estates: an independent real estate advisory firm led by Virender Singh, Navneet Rana, and Himanshu Malik with three decades of combined execution excellence across Delhi NCR.">
     <link rel="canonical" href="https://theprimerealestates.com/about.html">
     
+    <!-- Open Graph -->
+    <meta property="og:title" content="About The Firm & Leadership | The Prime Real Estates">
+    <meta property="og:description" content="Three decades of combined real estate advisory excellence across Delhi NCR and North India.">
+    <meta property="og:image" content="https://theprimerealestates.com/img/advisory-meeting.jpg">
+    <meta property="og:url" content="https://theprimerealestates.com/about.html">
+    <meta property="og:type" content="article">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                    colors: {
+                        prime: {
+                            50: '#FAF8F5',
+                            100: '#F4EFE6',
+                            200: '#E7DCcb',
+                            300: '#D5C2A5',
+                            400: '#BAA079',
+                            500: '#9E825A',
+                            600: '#866B46',
+                            700: '#6C5435',
+                            800: '#4F3D26',
+                            900: '#2F2416',
+                        },
+                        onyx: {
+                            800: '#1A1C20',
+                            900: '#121417',
+                            950: '#0B0C0E',
+                        },
+                        alabaster: '#FAFAF7',
+                    }
+                }
+            }
+        }
+    </script>
     
+    <style>
+        body {
+            font-family: '"Plus Jakarta Sans"', sans-serif;
+            background-color: #FAFAF7;
+            color: #1A1C20;
+        }
+        h1, h2, h3, .font-editorial {
+            font-family: '"Playfair Display"', Georgia, serif;
+        }
+    </style>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
@@ -19,165 +74,290 @@
       gtag('config', 'G-0H2MT335YJ');
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="selection:bg-prime-500 selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-onyx-900 text-stone-300 text-xs py-2 px-4 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 text-prime-400 font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-prime-400"></span>
+                    The Prime Real Estates &bull; Firm Background
+                </span>
+                <span class="hidden md:inline text-stone-500">|</span>
+                <span class="hidden md:inline text-stone-400">Founded on Integrity, Discretion & Local Mastery</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+919818926580" class="hover:text-prime-300 transition flex items-center gap-1.5">
+                    +91 9818926580
+                </a>
+                <a href="mailto:partners@theprimerealestates.com" class="hover:text-prime-300 transition hidden sm:flex items-center gap-1.5">
+                    partners@theprimerealestates.com
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <span class="text-2xl font-black tracking-tight text-slate-900">PRIME <span class="text-blue-600">REAL ESTATES</span></span>
+    <header class="sticky top-0 z-50 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col group">
+                <span class="font-editorial text-2xl sm:text-3xl tracking-tight text-onyx-900 font-semibold group-hover:text-prime-600 transition">
+                    THE PRIME
+                </span>
+                <span class="text-[10px] tracking-[0.25em] uppercase text-stone-500 font-medium -mt-1">
+                    Real Estates &bull; Advisory
+                </span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                <a href="about.html" class="text-blue-600 font-semibold">About Us</a>
-                <a href="services.html" class="hover:text-blue-600 transition">Portfolios</a>
-                <a href="contact.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg shadow-sm hover:bg-blue-700 transition">Contact Us</a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
+                <a href="index.html" class="hover:text-prime-600 transition pb-1">Home</a>
+                <a href="residential-leasing.html" class="hover:text-prime-600 transition pb-1">Expat Residential</a>
+                <a href="corporate-housing.html" class="hover:text-prime-600 transition pb-1">Corporate Relocation</a>
+                <a href="commercial-investments.html" class="hover:text-prime-600 transition pb-1">Commercial & JVs</a>
+                <a href="about.html" class="text-prime-600 font-semibold border-b-2 border-prime-500 pb-1">The Firm</a>
+                <a href="contact.html" class="hover:text-prime-600 transition pb-1">Contact</a>
             </nav>
+
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="contact.html" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-stone-800 text-stone-900 text-xs font-semibold tracking-wider uppercase hover:bg-stone-900 hover:text-white transition duration-200">
+                    Connect With Us
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden p-2 text-stone-700 hover:text-onyx-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#FAFAF7] border-b border-stone-200 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Home</a>
+            <a href="residential-leasing.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Expat Residential Leasing</a>
+            <a href="corporate-housing.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Corporate Relocation & Housing</a>
+            <a href="commercial-investments.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Commercial, Industrial & JVs</a>
+            <a href="about.html" class="block text-base font-semibold text-prime-600">About The Firm</a>
+            <a href="contact.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Contact Us</a>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-blue-400 font-semibold tracking-wider text-sm uppercase mb-3 block">Corporate Governance & Legacy</span>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">Built on Absolute Trust</h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Guided by seasoned leaders with decades of market mastery, Prime Real Estates connects investors, corporations, and institutions with prime properties pan-India.
+    <!-- Page Hero Banner -->
+    <section class="py-24 bg-onyx-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-400 block mb-3">Our Identity & Heritage</span>
+            <h1 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-6">
+                Three Decades of Advisory Excellence.
+            </h1>
+            <p class="text-stone-300 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                The Prime Real Estates was founded with a singular conviction: real estate decisions should be guided by thoughtful counsel, empirical market understanding, and unwavering loyalty to the client.
             </p>
         </div>
     </section>
 
-    <!-- Company Legacy & Values -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Core Foundation</span>
-                <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-6">Integrity, Transparency & Market Mastery</h2>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    Headquartered in Gurugram, Prime Real Estates operates across residential, commercial, industrial, agricultural, institutional, hospital, and corporate park sectors. Our core principle is absolute trust—ensuring clear titles, transparent pricing, and rigorous due diligence on every transaction.
-                </p>
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    From individual residential plots to multi-acre industrial parks and hospital campuses, our multidisciplinary team handles complex property sales and acquisitions across 10 states with absolute precision.
-                </p>
-                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-slate-100">
-                    <div>
-                        <div class="text-3xl font-extrabold text-blue-600 mb-1">10 States</div>
-                        <div class="text-sm text-slate-500 font-medium">Pan-India Reach</div>
-                    </div>
-                    <div>
-                        <div class="text-3xl font-extrabold text-blue-600 mb-1">7 Sectors</div>
-                        <div class="text-sm text-slate-500 font-medium">Complete Asset Classes</div>
+    <!-- Mission & Philosophy -->
+    <section class="py-24 bg-white border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-3">Our Core Philosophy</span>
+                    <h2 class="font-editorial text-3xl sm:text-4xl text-onyx-900 font-normal leading-tight mb-6">
+                        "To simplify real estate decisions in India through trusted local expertise, personalised advisory, and carefully considered opportunities."
+                    </h2>
+                    <p class="text-stone-600 text-sm leading-relaxed mb-6 font-light">
+                        In a market often characterised by aggressive brokers and conflicting incentives, The Prime Real Estates serves as an objective advisor. We do not push listings; we evaluate every property against the precise strategic, financial, and lifestyle parameters set by our clients.
+                    </p>
+                    <p class="text-stone-600 text-sm leading-relaxed font-light">
+                        Our clients include foreign diplomatic missions, multinational corporations relocating leadership teams from Japan, South Korea, Europe, and the US, as well as family offices managing multi-state real estate assets.
+                    </p>
+                </div>
+
+                <div class="bg-[#FAF8F5] p-8 sm:p-12 rounded-3xl border border-stone-200/80">
+                    <h3 class="font-editorial text-2xl text-onyx-900 mb-6">Guiding Commitments</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <span class="w-6 h-6 rounded-full bg-prime-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-onyx-900 text-sm mb-1">Discretion & Absolute Confidentiality</h4>
+                                <p class="text-xs text-stone-500 leading-relaxed font-light">Transactions and requirements are kept private, protecting our clients' commercial and personal interests.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <span class="w-6 h-6 rounded-full bg-prime-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-onyx-900 text-sm mb-1">Rigorous Legal & Title Diligence</h4>
+                                <p class="text-xs text-stone-500 leading-relaxed font-light">We personally inspect property titles, zoning approvals, and landlord reputations before shortlisting.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <span class="w-6 h-6 rounded-full bg-prime-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-onyx-900 text-sm mb-1">Direct Partner Involvement</h4>
+                                <p class="text-xs text-stone-500 leading-relaxed font-light">Every assignment is personally directed by a senior partner, ensuring senior-level judgment from start to finish.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="bg-slate-100 p-8 rounded-2xl border border-slate-200">
-                <h3 class="text-xl font-bold text-slate-900 mb-4">Our Core Pillars</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
-                        <div>
-                            <strong class="text-slate-900 block">Trust & Transparency</strong>
-                            <span class="text-slate-600 text-sm">Absolute clarity in valuation, ownership verification, and direct partner negotiations.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
-                        <div>
-                            <strong class="text-slate-900 block">Multi-Sector Expertise</strong>
-                            <span class="text-slate-600 text-sm">Specialized execution across residential, industrial, healthcare, and commercial parks.</span>
-                        </div>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">✓</div>
-                        <div>
-                            <strong class="text-slate-900 block">Pan-India Reach</strong>
-                            <span class="text-slate-600 text-sm">Deep localized execution strength spanning Delhi NCR, Haryana, Punjab, Gujarat, and beyond.</span>
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Leadership Team Section -->
-    <section class="py-20 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="text-blue-600 font-semibold tracking-wider text-sm uppercase">Executive Guidance</span>
-            <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-4">Meet Our Leadership Team</h2>
-            <p class="text-slate-600 max-w-2xl mx-auto mb-16">Decades of combined industry leadership steering high-impact real estate transactions across India.</p>
-            
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Leader 1 -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition flex flex-col justify-between">
+    <!-- Leadership Partners Section -->
+    <section class="py-24 bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-2">Senior Leadership</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl text-onyx-900 font-normal">
+                    The Advisory Partners
+                </h2>
+                <p class="text-stone-500 text-sm mt-3 font-light">
+                    Direct access to experienced leaders who have steered high-impact transactions across Delhi NCR and North India.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Partner 1: Virender Singh -->
+                <div class="bg-white rounded-3xl border border-stone-200/80 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Virender Singh</h3>
-                        <p class="text-blue-600 font-semibold text-base mb-4">Managing Partner & Founder</p>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Directing corporate strategy, institutional relationships, and large-scale land acquisitions across Gurugram and northern markets.
+                        <div class="w-16 h-16 rounded-2xl bg-prime-100 text-prime-700 flex items-center justify-center font-editorial font-bold text-2xl mb-6">
+                            VS
+                        </div>
+                        <h3 class="font-editorial text-2xl text-onyx-900 mb-1">Virender Singh</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-prime-600 block mb-4">
+                            Managing Partner & Founder
+                        </span>
+                        <p class="text-stone-600 text-xs sm:text-sm leading-relaxed font-light mb-6">
+                            Directs firm strategy, high-value land monetization, and institutional developer negotiations across Gurugram and Northern markets. Brings over three decades of trusted relationships with landowners, diplomatic circles, and leading builders including DLF and Emaar.
                         </p>
                     </div>
-                </div>
-                <!-- Leader 2 -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Navneet Rana</h3>
-                        <p class="text-blue-600 font-semibold text-base mb-4">Senior Partner - Healthcare & Institutional</p>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Specializing in hospital site selection, institutional real estate, and regulatory compliance for premier medical and educational networks.
-                        </p>
+                    <div class="pt-6 border-t border-stone-100 text-[11px] text-stone-500">
+                        Focus: Diplomatic Residences, Land Acquisition & Strategic JVs
                     </div>
                 </div>
-                <!-- Leader 3 -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition flex flex-col justify-between">
+
+                <!-- Partner 2: Navneet Rana -->
+                <div class="bg-white rounded-3xl border border-stone-200/80 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Himanshu Malik</h3>
-                        <p class="text-blue-600 font-semibold text-base mb-4">Senior Partner - Commercial & Industrial</p>
-                        <p class="text-slate-600 leading-relaxed text-sm">
-                            Managing corporate parks, industrial warehousing, commercial leasing, and multi-state property portfolios pan-India.
+                        <div class="w-16 h-16 rounded-2xl bg-prime-100 text-prime-700 flex items-center justify-center font-editorial font-bold text-2xl mb-6">
+                            NR
+                        </div>
+                        <h3 class="font-editorial text-2xl text-onyx-900 mb-1">Navneet Rana</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-prime-600 block mb-4">
+                            Senior Partner - Healthcare & Institutional
+                        </span>
+                        <p class="text-stone-600 text-xs sm:text-sm leading-relaxed font-light mb-6">
+                            Heads the institutional and healthcare real estate practice. Specialises in hospital site selection, medical network expansions, regulatory zoning approvals, and institutional leasing for major healthcare providers including Cloudnine and Rainbow Hospitals.
                         </p>
                     </div>
+                    <div class="pt-6 border-t border-stone-100 text-[11px] text-stone-500">
+                        Focus: Hospital Real Estate, Institutional Sites & Regulatory Diligence
+                    </div>
                 </div>
+
+                <!-- Partner 3: Himanshu Malik -->
+                <div class="bg-white rounded-3xl border border-stone-200/80 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-prime-100 text-prime-700 flex items-center justify-center font-editorial font-bold text-2xl mb-6">
+                            HM
+                        </div>
+                        <h3 class="font-editorial text-2xl text-onyx-900 mb-1">Himanshu Malik</h3>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-prime-600 block mb-4">
+                            Senior Partner - Commercial & Industrial
+                        </span>
+                        <p class="text-stone-600 text-xs sm:text-sm leading-relaxed font-light mb-6">
+                            Directs corporate park leasing, international corporate mobility, Grade-A logistics warehousing, and multi-state property portfolios pan-India. Leads advisory for Japanese, South Korean, and Western corporate enterprises establishing operations in North India.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-stone-100 text-[11px] text-stone-500">
+                        Focus: Corporate Relocations, Commercial Leasing & Industrial Hubs
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Section -->
+    <section class="py-24 bg-onyx-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-400 block mb-3">Begin Advisory Mandate</span>
+            <h2 class="font-editorial text-3xl sm:text-4xl font-normal mb-6">
+                Consult with our senior partners directly.
+            </h2>
+            <p class="text-stone-300 text-sm sm:text-base max-w-xl mx-auto mb-10 font-light">
+                We invite foreign missions, multinational corporations, and private property owners to arrange a confidential meeting.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="contact.html" class="px-8 py-4 rounded-full bg-prime-500 text-white font-medium text-xs uppercase tracking-widest hover:bg-prime-400 transition shadow-xl">
+                    Schedule a Consultation
+                </a>
+                <a href="tel:+919818926580" class="px-8 py-4 rounded-full border border-stone-600 text-stone-300 font-medium text-xs uppercase tracking-widest hover:bg-white hover:text-onyx-900 transition">
+                    Call: +91 9818926580
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-                <span class="text-white font-black text-xl tracking-tight block mb-4">PRIME REAL ESTATES</span>
-                <p class="text-sm">Comprehensive real estate sales, leasing, and advisory across residential, commercial, industrial, agricultural, institutional, hospitals, and corporate parks.</p>
+    <footer class="bg-onyx-950 text-stone-400 py-16 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <span class="font-editorial text-2xl text-stone-100 font-semibold tracking-tight block mb-2">
+                        THE PRIME REAL ESTATES
+                    </span>
+                    <p class="text-xs uppercase tracking-[0.2em] text-prime-400 font-medium mb-4">
+                        Real Estate. Thoughtfully Advised.
+                    </p>
+                    <p class="text-xs text-stone-400 leading-relaxed font-light">
+                        Three decades of advisory excellence serving expatriates, multinational corporations, and discerning investors across Delhi NCR.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Portfolios</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="residential-leasing.html" class="hover:text-prime-300">Expat Residential Leasing</a></li>
+                        <li><a href="corporate-housing.html" class="hover:text-prime-300">Corporate Relocations</a></li>
+                        <li><a href="commercial-investments.html" class="hover:text-prime-300">Commercial & JVs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Offices</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><span class="text-stone-300">Chanakyapuri, New Delhi</span></li>
+                        <li><span class="text-stone-300">B-721, Sushant Lok Phase I, Gurugram</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Contact</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="tel:+919818926580" class="text-stone-300 font-medium hover:text-prime-300">+91 9818926580</a></li>
+                        <li><a href="mailto:partners@theprimerealestates.com" class="hover:text-prime-300">partners@theprimerealestates.com</a></li>
+                        <li><a href="contact.html" class="hover:text-prime-300">Private Client Form</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="services.html" class="hover:text-white transition">Portfolios</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
-                </ul>
+
+            <div class="pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500 gap-4">
+                <div>&copy; <span id="currentYear"></span> The Prime Real Estates. All rights reserved.</div>
+                <div class="flex gap-6">
+                    <a href="index.html" class="hover:text-stone-300">Home</a>
+                    <a href="services.html" class="hover:text-stone-300">Services</a>
+                    <a href="contact.html" class="hover:text-stone-300">Contact</a>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Asset Portfolios</h4>
-                <ul class="space-y-2 text-sm">
-                    <li>Residential & Commercial</li>
-                    <li>Industrial & Warehousing</li>
-                    <li>Hospitals & Institutional</li>
-                    <li>Agricultural Land & Corporate Parks</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Headquarters</h4>
-                <p class="text-sm mb-1">B-721, Sushant Lok Phase I</p>
-                <p class="text-sm mb-1">Sector 43, Gurugram, Haryana 122009</p>
-                <p class="text-sm mb-1">Phone: +91 9818926580</p>
-                <p class="text-sm">Email: partners@theprimerealestates.com</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 text-center text-xs">
-            &copy; 2026 Prime Real Estates. All rights reserved.
         </div>
     </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>

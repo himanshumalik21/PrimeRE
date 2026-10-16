@@ -3,13 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Prime Real Estates - Gurugram & Pan-India Advisory</title>
-    <meta name="description" content="Connect with Prime Real Estates partners in Gurugram. Call +91 9818926580 or email partners@theprimerealestates.com for property sales, leasing, and land acquisitions.">
+    <title>Private Client Advisory & Enquiries | The Prime Real Estates</title>
+    <meta name="description" content="Connect with senior partners at The Prime Real Estates. Submit your private residential leasing, corporate housing, or commercial real estate requirement in Delhi NCR.">
     <link rel="canonical" href="https://theprimerealestates.com/contact.html">
     
+    <!-- Open Graph -->
+    <meta property="og:title" content="Private Client Advisory & Enquiries | The Prime Real Estates">
+    <meta property="og:description" content="Confidential real estate advisory for expatriates, corporations, and investors in Delhi NCR.">
+    <meta property="og:image" content="https://theprimerealestates.com/img/advisory-meeting.jpg">
+    <meta property="og:url" content="https://theprimerealestates.com/contact.html">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                    colors: {
+                        prime: {
+                            50: '#FAF8F5',
+                            100: '#F4EFE6',
+                            200: '#E7DCcb',
+                            300: '#D5C2A5',
+                            400: '#BAA079',
+                            500: '#9E825A',
+                            600: '#866B46',
+                            700: '#6C5435',
+                            800: '#4F3D26',
+                            900: '#2F2416',
+                        },
+                        onyx: {
+                            800: '#1A1C20',
+                            900: '#121417',
+                            950: '#0B0C0E',
+                        },
+                        alabaster: '#FAFAF7',
+                    }
+                }
+            }
+        }
+    </script>
     
+    <style>
+        body {
+            font-family: '"Plus Jakarta Sans"', sans-serif;
+            background-color: #FAFAF7;
+            color: #1A1C20;
+        }
+        h1, h2, h3, .font-editorial {
+            font-family: '"Playfair Display"', Georgia, serif;
+        }
+    </style>
+
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0H2MT335YJ"></script>
     <script>
@@ -19,184 +74,322 @@
       gtag('config', 'G-0H2MT335YJ');
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white flex flex-col min-h-screen">
+<body class="selection:bg-prime-500 selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-onyx-900 text-stone-300 text-xs py-2 px-4 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 text-prime-400 font-medium">
+                    <span class="w-1.5 h-1.5 rounded-full bg-prime-400"></span>
+                    The Prime Real Estates &bull; Private Client Desk
+                </span>
+                <span class="hidden md:inline text-stone-500">|</span>
+                <span class="hidden md:inline text-stone-400">Chanakyapuri, New Delhi &bull; Sushant Lok, Gurugram</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+919818926580" class="hover:text-prime-300 transition flex items-center gap-1.5">
+                    +91 9818926580
+                </a>
+                <a href="mailto:partners@theprimerealestates.com" class="hover:text-prime-300 transition hidden sm:flex items-center gap-1.5">
+                    partners@theprimerealestates.com
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2">
-                <span class="text-2xl font-black tracking-tight text-slate-900">PRIME <span class="text-blue-600">REAL ESTATES</span></span>
+    <header class="sticky top-0 z-50 bg-[#FAFAF7]/95 backdrop-blur-md border-b border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+            <a href="index.html" class="flex flex-col group">
+                <span class="font-editorial text-2xl sm:text-3xl tracking-tight text-onyx-900 font-semibold group-hover:text-prime-600 transition">
+                    THE PRIME
+                </span>
+                <span class="text-[10px] tracking-[0.25em] uppercase text-stone-500 font-medium -mt-1">
+                    Real Estates &bull; Advisory
+                </span>
             </a>
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
-                <a href="services.html" class="hover:text-blue-600 transition">Portfolios</a>
-                <a href="contact.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-lg shadow-sm hover:bg-blue-700 transition">Contact Us</a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-700">
+                <a href="index.html" class="hover:text-prime-600 transition pb-1">Home</a>
+                <a href="residential-leasing.html" class="hover:text-prime-600 transition pb-1">Expat Residential</a>
+                <a href="corporate-housing.html" class="hover:text-prime-600 transition pb-1">Corporate Relocation</a>
+                <a href="commercial-investments.html" class="hover:text-prime-600 transition pb-1">Commercial & JVs</a>
+                <a href="about.html" class="hover:text-prime-600 transition pb-1">The Firm</a>
+                <a href="contact.html" class="text-prime-600 font-semibold border-b-2 border-prime-500 pb-1">Contact</a>
             </nav>
+
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:+919818926580" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-stone-800 text-stone-900 text-xs font-semibold tracking-wider uppercase hover:bg-stone-900 hover:text-white transition duration-200">
+                    Call: +91 9818926580
+                </a>
+            </div>
+
+            <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="lg:hidden p-2 text-stone-700 hover:text-onyx-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden lg:hidden bg-[#FAFAF7] border-b border-stone-200 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Home</a>
+            <a href="residential-leasing.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Expat Residential Leasing</a>
+            <a href="corporate-housing.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Corporate Relocation & Housing</a>
+            <a href="commercial-investments.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">Commercial, Industrial & JVs</a>
+            <a href="about.html" class="block text-base font-medium text-stone-800 hover:text-prime-600">About The Firm</a>
+            <a href="contact.html" class="block text-base font-semibold text-prime-600">Contact Us</a>
         </div>
     </header>
 
     <!-- Page Header -->
-    <section class="bg-slate-900 text-white py-16 sm:py-20 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-blue-400 font-semibold tracking-wider text-sm uppercase mb-3 block">Get In Touch</span>
-            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 sm:mb-6">Partner With Our Leadership</h1>
-            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Reach out to our Gurugram headquarters for trusted consultation on property sales, acquisitions, and pan-India real estate expansion.
+    <section class="py-20 bg-onyx-900 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-400 block mb-3">Confidential Advisory Desk</span>
+            <h1 class="font-editorial text-4xl sm:text-5xl font-normal mb-6">
+                Connect With Our Advisory Partners.
+            </h1>
+            <p class="text-stone-300 text-base max-w-xl mx-auto font-light leading-relaxed">
+                Whether seeking an executive residence in Chanakyapuri or Gurugram, or orchestrating a large-scale commercial or land transaction, we provide direct partner attention.
             </p>
         </div>
     </section>
 
-    <!-- Contact Details & Form Section -->
-    <section class="py-16 sm:py-20 bg-white flex-grow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-start">
-            
-            <!-- Contact Info Column -->
-            <div>
-                <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Headquarters</span>
-                <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-6">Visit Our Office</h2>
-                <p class="text-slate-600 leading-relaxed mb-8">
-                    We welcome clients, investors, and corporate partners to visit our headquarters in Gurugram or connect directly via phone and email.
-                </p>
-
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl shrink-0 border border-blue-100">📍</div>
-                        <div>
-                            <strong class="text-slate-900 block text-lg">Office Address</strong>
-                            <p class="text-slate-600">B-721, Sushant Lok Phase I, Sector 43<br>Gurugram, Haryana 122009</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl shrink-0 border border-blue-100">📞</div>
-                        <div>
-                            <strong class="text-slate-900 block text-lg">Direct Phone</strong>
-                            <p class="text-slate-600"><a href="tel:+919818926580" class="hover:text-blue-600 font-semibold">+91 9818926580</a></p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center font-bold text-xl shrink-0 border border-blue-100">✉️</div>
-                        <div>
-                            <strong class="text-slate-900 block text-lg">Email Address</strong>
-                            <p class="text-slate-600"><a href="mailto:partners@theprimerealestates.com" class="hover:text-blue-600 font-semibold">partners@theprimerealestates.com</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-12 p-6 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <h3 class="font-bold text-slate-900 mb-2">Executive Leadership</h3>
-                    <p class="text-slate-600 text-sm">Virender Singh, Navneet Rana, and Himanshu Malik are personally available for institutional and high-value property discussions.</p>
-                </div>
-            </div>
-
-            <!-- Form Wrapper Column -->
-            <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl shadow-sm">
-                <h3 class="text-2xl font-bold text-slate-900 mb-6">Send Us an Enquiry</h3>
+    <!-- Main Contact & Form Section -->
+    <section class="py-24 bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
                 
-                <!-- Contact Form -->
-                <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="space-y-5">
-                    
-                    <!-- Web3Forms Config Hidden Fields -->
-                    <input type="hidden" name="access_key" value="2e2b38d2-a228-471c-b573-7dafddaa14b5">
-                    <input type="hidden" name="subject" value="New Property Enquiry - Prime Real Estates">
-                    <!-- Optional: bot protection honeypot -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <!-- Left Information Column (5 cols) -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm">
+                        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-2">Direct Contact</span>
+                        <h3 class="font-editorial text-2xl text-onyx-900 mb-6">Partner Access</h3>
 
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white" placeholder="Enter your full name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white" placeholder="+91 XXXXX XXXXX">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white" placeholder="you@company.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Asset Interest / Division</label>
-                        <select name="division" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white">
-                            <option>Residential Property</option>
-                            <option>Commercial & Corporate Parks</option>
-                            <option>Industrial & Warehousing</option>
-                            <option>Hospitals & Healthcare</option>
-                            <option>Institutional Real Estate</option>
-                            <option>Agricultural Land</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Message / Requirement</label>
-                        <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-600 focus:outline-none bg-white" placeholder="Describe your property requirement..."></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-semibold py-4 rounded-xl hover:bg-blue-700 transition shadow-lg">Submit Enquiry</button>
-                </form>
+                        <div class="space-y-6">
+                            <div>
+                                <span class="text-xs text-stone-400 uppercase tracking-wider block mb-1">Direct Phone & WhatsApp</span>
+                                <a href="tel:+919818926580" class="text-lg font-semibold text-onyx-900 hover:text-prime-600 transition block">
+                                    +91 9818926580
+                                </a>
+                                <span class="text-xs text-stone-500">Available 7 days / week for international clients</span>
+                            </div>
 
-                <!-- Dynamic Success / Error Response Box -->
-                <div id="formResult" class="hidden mt-6 p-6 rounded-xl text-center"></div>
+                            <div>
+                                <span class="text-xs text-stone-400 uppercase tracking-wider block mb-1">Official Communications</span>
+                                <a href="mailto:partners@theprimerealestates.com" class="text-base font-semibold text-onyx-900 hover:text-prime-600 transition block">
+                                    partners@theprimerealestates.com
+                                </a>
+                            </div>
+
+                            <div class="pt-4 border-t border-stone-100">
+                                <a href="https://wa.me/919818926580?text=Hello%20The%20Prime%20Real%20Estates,%20I%20would%20like%20to%20discuss%20a%20property%20requirement." target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-emerald-600 text-white font-medium text-xs uppercase tracking-wider hover:bg-emerald-500 transition shadow">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                                    Chat on WhatsApp Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Locations -->
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm space-y-6">
+                        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-2">Offices & Presence</span>
+                        
+                        <div class="border-b border-stone-100 pb-5">
+                            <h4 class="font-editorial text-lg text-onyx-900 mb-1">New Delhi Diplomatic Office</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed font-light">
+                                Diplomatic Enclave, Chanakyapuri<br>
+                                New Delhi, 110021, India
+                            </p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-editorial text-lg text-onyx-900 mb-1">Gurugram Executive Office</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed font-light">
+                                B-721, Sushant Lok Phase I, Sector 43<br>
+                                Gurugram, Haryana, 122009, India
+                            </p>
+                            <span class="text-[11px] text-stone-400 mt-1 block">5 minutes from One Horizon Center / Golf Course Road</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Column (7 cols) -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-12 rounded-3xl border border-stone-200/80 shadow-md">
+                        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-prime-600 block mb-2">Confidential Brief</span>
+                        <h3 class="font-editorial text-3xl text-onyx-900 font-normal mb-2">Submit Your Requirement</h3>
+                        <p class="text-stone-500 text-xs sm:text-sm font-light leading-relaxed mb-8">
+                            Please provide details on your property requirement. All submissions are held in strict professional confidence.
+                        </p>
+
+                        <form action="https://api.web3forms.com/submit" method="POST" id="mainContactForm" class="space-y-6">
+                            <!-- Web3Forms Config -->
+                            <input type="hidden" name="access_key" value="2e2b38d2-a228-471c-b573-7dafddaa14b5">
+                            <input type="hidden" name="subject" value="New Advisory Requirement - The Prime Real Estates">
+                            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                            <!-- Practice Division Selector -->
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Advisory Division *</label>
+                                <select name="division" id="divisionSelect" required class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]">
+                                    <option value="Expat Residential Leasing">Expat Residential Leasing (Diplomatic / Executive)</option>
+                                    <option value="Corporate Housing & Mobility">Corporate Housing & Mobility (MNC Programs)</option>
+                                    <option value="Commercial Office Parks">Commercial Office Parks & Grade-A Leasing</option>
+                                    <option value="Industrial Logistics & Warehousing">Industrial Logistics & Warehousing</option>
+                                    <option value="Healthcare & Institutional Sites">Healthcare & Institutional Real Estate</option>
+                                    <option value="Joint Ventures & Land Monetization">Joint Ventures & Land Monetization</option>
+                                </select>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Full Name *</label>
+                                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="Your name">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Company / Mission / Org</label>
+                                    <input type="text" name="organization" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="e.g. MNC / Foreign Mission / Private">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Phone Number *</label>
+                                    <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="+91 XXXXX XXXXX / Country code">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Email Address *</label>
+                                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="name@company.com">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Target Location / Submarket</label>
+                                    <input type="text" name="target_location" id="targetLocation" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="e.g. Chanakyapuri / Golf Course Rd / KMP">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Timeframe / Move-in</label>
+                                    <input type="text" name="timeframe" class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="e.g. Immediate / Next 60 days">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase tracking-wider text-stone-700 mb-2">Requirement Overview *</label>
+                                <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-stone-300 text-stone-800 text-sm focus:ring-2 focus:ring-prime-500 focus:outline-none bg-[#FAFAF7]" placeholder="Please describe size, budget preferences, or specific criteria..."></textarea>
+                            </div>
+
+                            <button type="submit" id="mainSubmitBtn" class="w-full py-4 rounded-full bg-onyx-900 hover:bg-stone-800 text-white font-semibold text-xs uppercase tracking-widest transition duration-200 shadow-xl">
+                                Submit Private Enquiry
+                            </button>
+
+                            <div id="mainFormResult" class="hidden p-4 rounded-xl text-center text-sm font-medium"></div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-                <span class="text-white font-black text-xl tracking-tight block mb-4">PRIME REAL ESTATES</span>
-                <p class="text-sm">Comprehensive real estate sales, leasing, and advisory across residential, commercial, industrial, agricultural, institutional, hospitals, and corporate parks.</p>
+    <footer class="bg-onyx-950 text-stone-400 py-16 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div>
+                    <span class="font-editorial text-2xl text-stone-100 font-semibold tracking-tight block mb-2">
+                        THE PRIME REAL ESTATES
+                    </span>
+                    <p class="text-xs uppercase tracking-[0.2em] text-prime-400 font-medium mb-4">
+                        Real Estate. Thoughtfully Advised.
+                    </p>
+                    <p class="text-xs text-stone-400 leading-relaxed font-light">
+                        Three decades of advisory excellence serving expatriates, multinational corporations, and discerning investors across Delhi NCR.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Advisory Services</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="residential-leasing.html" class="hover:text-prime-300">Expat Residential Leasing</a></li>
+                        <li><a href="corporate-housing.html" class="hover:text-prime-300">Corporate Relocations</a></li>
+                        <li><a href="commercial-investments.html" class="hover:text-prime-300">Commercial & JVs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Offices</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><span class="text-stone-300">Chanakyapuri, New Delhi</span></li>
+                        <li><span class="text-stone-300">B-721, Sushant Lok Phase I, Gurugram</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xs font-semibold uppercase tracking-wider text-stone-200 mb-4">Direct Contact</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="tel:+919818926580" class="text-stone-300 font-medium hover:text-prime-300">+91 9818926580</a></li>
+                        <li><a href="mailto:partners@theprimerealestates.com" class="hover:text-prime-300">partners@theprimerealestates.com</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="index.html" class="hover:text-white transition">Home</a></li>
-                    <li><a href="about.html" class="hover:text-white transition">About Us</a></li>
-                    <li><a href="services.html" class="hover:text-white transition">Portfolios</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
-                </ul>
+
+            <div class="pt-8 border-t border-stone-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-stone-500 gap-4">
+                <div>&copy; <span id="currentYear"></span> The Prime Real Estates. All rights reserved.</div>
+                <div class="flex gap-6">
+                    <a href="index.html" class="hover:text-stone-300">Home</a>
+                    <a href="about.html" class="hover:text-stone-300">About</a>
+                    <a href="services.html" class="hover:text-stone-300">Services</a>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Asset Portfolios</h4>
-                <ul class="space-y-2 text-sm">
-                    <li>Residential & Commercial</li>
-                    <li>Industrial & Warehousing</li>
-                    <li>Hospitals & Institutional</li>
-                    <li>Agricultural Land & Corporate Parks</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-4">Headquarters</h4>
-                <p class="text-sm mb-1">B-721, Sushant Lok Phase I</p>
-                <p class="text-sm mb-1">Sector 43, Gurugram, Haryana 122009</p>
-                <p class="text-sm mb-1">Phone: +91 9818926580</p>
-                <p class="text-sm">Email: partners@theprimerealestates.com</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 text-center text-xs">
-            &copy; 2026 Prime Real Estates. All rights reserved.
         </div>
     </footer>
 
-    <!-- Async Form Submission Handler Script -->
+    <!-- Scripts -->
     <script>
-    const form = document.getElementById('contactForm');
-    const result = document.getElementById('formResult');
-    const submitBtn = document.getElementById('submitBtn');
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-        
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending Enquiry...";
-        result.classList.add('hidden');
+        // URL query parameter parsing to pre-populate form
+        const params = new URLSearchParams(window.location.search);
+        const marketParam = params.get('market');
+        const divisionParam = params.get('division');
 
-        fetch('https://api.web3forms.com/submit', {
+        if (marketParam) {
+            const locInput = document.getElementById('targetLocation');
+            if (locInput) locInput.value = marketParam;
+        }
+
+        if (divisionParam) {
+            const divSelect = document.getElementById('divisionSelect');
+            if (divSelect) {
+                for (let option of divSelect.options) {
+                    if (option.value.toLowerCase().includes(divisionParam.toLowerCase())) {
+                        option.selected = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Web3Forms AJAX handler
+        const form = document.getElementById('mainContactForm');
+        const result = document.getElementById('mainFormResult');
+        const submitBtn = document.getElementById('mainSubmitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting Private Enquiry...';
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -205,50 +398,28 @@
                 body: json
             })
             .then(async (response) => {
-                let jsonResponse = await response.json();
-                result.classList.remove('hidden');
-                
+                let resJson = await response.json();
                 if (response.status == 200) {
-                    result.className = "mt-6 p-6 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-xl text-center shadow-sm";
-                    result.innerHTML = `
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-3">✓</div>
-                        <h4 class="font-bold text-lg mb-1">Enquiry Sent Successfully!</h4>
-                        <p class="text-sm text-emerald-700 mb-4">Thank you. We have safely received your requirement and our leadership will connect with you shortly.</p>
-                        <button type="button" onclick="resetForm()" class="bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition shadow">Back to Website</button>
-                    `;
+                    result.classList.remove('hidden', 'bg-rose-50', 'text-rose-800', 'border-rose-200');
+                    result.classList.add('bg-emerald-50', 'text-emerald-800', 'border', 'border-emerald-200');
+                    result.innerHTML = "Thank you. Your enquiry has been routed directly to our senior partners. We will reach out promptly.";
                     form.reset();
-                    submitBtn.textContent = "Submit Enquiry";
                 } else {
-                    result.className = "mt-6 p-6 bg-rose-50 border border-rose-200 text-rose-900 rounded-xl text-center shadow-sm";
-                    result.innerHTML = `
-                        <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-3">✕</div>
-                        <h4 class="font-bold text-lg mb-1">Submission Failed</h4>
-                        <p class="text-sm text-rose-700 mb-4">${jsonResponse.message || 'Please check your details and try again.'}</p>
-                        <button type="button" onclick="resetForm()" class="bg-rose-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-rose-700 transition shadow">Try Again</button>
-                    `;
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = "Submit Enquiry";
+                    result.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'border-emerald-200');
+                    result.classList.add('bg-rose-50', 'text-rose-800', 'border', 'border-rose-200');
+                    result.innerHTML = resJson.message || "An error occurred. Please call +91 9818926580 directly.";
                 }
             })
             .catch(error => {
-                result.classList.remove('hidden');
-                result.className = "mt-6 p-6 bg-rose-50 border border-rose-200 text-rose-900 rounded-xl text-center shadow-sm";
-                result.innerHTML = `
-                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-3">✕</div>
-                    <h4 class="font-bold text-lg mb-1">Connection Error</h4>
-                    <p class="text-sm text-rose-700 mb-4">Unable to reach submission server. Please email us directly at partners@theprimerealestates.com</p>
-                    <button type="button" onclick="resetForm()" class="bg-rose-600 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-rose-700 transition shadow">Try Again</button>
-                `;
+                result.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'border-emerald-200');
+                result.classList.add('bg-rose-50', 'text-rose-800', 'border', 'border-rose-200');
+                result.innerHTML = "Submission failed. Please call +91 9818926580 or email partners@theprimerealestates.com.";
+            })
+            .then(function() {
                 submitBtn.disabled = false;
-                submitBtn.textContent = "Submit Enquiry";
+                submitBtn.textContent = 'Submit Private Enquiry';
             });
-    });
-
-    function resetForm() {
-        result.classList.add('hidden');
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Enquiry";
-    }
+        });
     </script>
 </body>
 </html>
